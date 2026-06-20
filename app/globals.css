@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #050a14;
-  --color-surface: #0a1120;
-  --color-border: #16243d;
-  --color-text: #e0e7ff;
-  --color-muted: #818cf8;
-  --color-accent: #00e5ff;
-  --color-accent-warm: #b388ff;
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-border: #334155;
+  --color-text: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-accent: #38bdf8;
+  --color-accent-warm: #818cf8;
 }
 
 html {
@@ -27,8 +27,8 @@ body {
   z-index: -1;
   background-color: var(--color-bg);
   background-image: 
-    radial-gradient(circle at 15% 50%, rgba(0, 229, 255, 0.06), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(0, 229, 255, 0.04), transparent 25%),
-    radial-gradient(circle at 50% 80%, rgba(179, 136, 255, 0.03), transparent 25%);
+    radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.05), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(129, 140, 248, 0.03), transparent 25%);
   pointer-events: none;
 }
