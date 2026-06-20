@@ -42,8 +42,12 @@ export default function Footer() {
           
           {/* Column 1: University Info */}
           <div className="flex gap-4 items-start">
-            <div className="w-12 h-12 shrink-0 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-black border-2 border-yellow-500 shadow-[0_0_15px_rgba(250,204,21,0.3)]">
-              <span className="text-[10px] leading-none text-center">HUFLIT</span>
+            <div className="w-12 h-12 shrink-0 bg-white rounded-full flex items-center justify-center p-1 border-2 border-yellow-500 shadow-[0_0_15px_rgba(250,204,21,0.3)]">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/vi/thumb/e/e0/Logo_HUFLIT.svg/200px-Logo_HUFLIT.svg.png" 
+                alt="HUFLIT Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <h3 className="font-bold text-text text-sm md:text-base leading-snug">
