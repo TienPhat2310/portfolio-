@@ -1,7 +1,40 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { ExternalLink, Eye, Users } from "lucide-react";
 
 export default function Footer() {
+  const [views, setViews] = useState<number | null>(null);
+  const [visitors, setVisitors] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Increment total views on every load
+    fetch("https://api.counterapi.dev/v1/tienphat_portfolio/views/up")
+      .then((res) => res.json())
+      .then((data) => setViews(data.count))
+      .catch(() => setViews(171)); // Fallback
+
+    // Check unique visitors using localStorage
+    const hasVisited = localStorage.getItem("has_visited_tienphat");
+    
+    if (!hasVisited) {
+      // First time visitor
+      fetch("https://api.counterapi.dev/v1/tienphat_portfolio/visitors/up")
+        .then((res) => res.json())
+        .then((data) => {
+          setVisitors(data.count);
+          localStorage.setItem("has_visited_tienphat", "true");
+        })
+        .catch(() => setVisitors(61)); // Fallback
+    } else {
+      // Returning visitor, just get the count
+      fetch("https://api.counterapi.dev/v1/tienphat_portfolio/visitors")
+        .then((res) => res.json())
+        .then((data) => setVisitors(data.count))
+        .catch(() => setVisitors(61)); // Fallback
+    }
+  }, []);
+
   return (
     <footer className="w-full border-t border-border bg-surface/50 mt-20 pt-16 pb-8">
       <div className="max-w-6xl mx-auto px-6">
@@ -67,10 +100,10 @@ export default function Footer() {
           </p>
           <div className="flex gap-6">
             <span className="flex items-center gap-1.5">
-              <Eye className="w-4 h-4" /> VIEWS: <span className="text-text font-bold">171</span>
+              <Eye className="w-4 h-4" /> VIEWS: <span className="text-text font-bold">{views !== null ? views : "..."}</span>
             </span>
             <span className="flex items-center gap-1.5">
-              <Users className="w-4 h-4" /> VISITORS: <span className="text-text font-bold">61</span>
+              <Users className="w-4 h-4" /> VISITORS: <span className="text-text font-bold">{visitors !== null ? visitors : "..."}</span>
             </span>
           </div>
         </div>
