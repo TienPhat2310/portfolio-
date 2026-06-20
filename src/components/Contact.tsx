@@ -45,8 +45,26 @@ export default function Contact() {
         {/* CỘT TRÁI - Contact Info */}
         <div className="lg:col-span-2 flex flex-col gap-4">
           <a
+            href="https://www.facebook.com/tien.phat.516688"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between p-6 rounded-2xl border border-white/5 bg-surface/40 backdrop-blur-md hover:bg-surface/60 hover:border-accent/40 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(56,189,248,0.1)] hover:-translate-y-1"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <FacebookIcon className="w-5 h-5 text-accent" />
+              </div>
+              <div>
+                <p className="text-xs text-muted mb-1 font-[family-name:var(--font-mono)]">Facebook</p>
+                <p className="font-semibold text-sm md:text-base text-text group-hover:text-accent transition-colors">Nguyễn Văn Tiến Phát</p>
+              </div>
+            </div>
+            <ArrowRight className="w-5 h-5 text-muted group-hover:text-accent group-hover:translate-x-1 transition-all" />
+          </a>
+
+          <a
             href="mailto:nguyenphat0976459403@gmail.com"
-            className="flex items-center justify-between p-6 rounded-2xl border border-white/5 bg-surface/40 backdrop-blur-md hover:bg-surface/60 hover:border-accent/40 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(57,255,136,0.1)] hover:-translate-y-1"
+            className="flex items-center justify-between p-6 rounded-2xl border border-white/5 bg-surface/40 backdrop-blur-md hover:bg-surface/60 hover:border-accent/40 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(56,189,248,0.1)] hover:-translate-y-1"
           >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
@@ -64,7 +82,7 @@ export default function Contact() {
             href="https://github.com/TienPhat2310"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-6 rounded-2xl border border-white/5 bg-surface/40 backdrop-blur-md hover:bg-surface/60 hover:border-accent/40 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(57,255,136,0.1)] hover:-translate-y-1"
+            className="flex items-center justify-between p-6 rounded-2xl border border-white/5 bg-surface/40 backdrop-blur-md hover:bg-surface/60 hover:border-accent/40 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(56,189,248,0.1)] hover:-translate-y-1"
           >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
@@ -73,24 +91,6 @@ export default function Contact() {
               <div>
                 <p className="text-xs text-muted mb-1 font-[family-name:var(--font-mono)]">Github</p>
                 <p className="font-semibold text-sm md:text-base text-text group-hover:text-accent transition-colors">TienPhat2310</p>
-              </div>
-            </div>
-            <ArrowRight className="w-5 h-5 text-muted group-hover:text-accent group-hover:translate-x-1 transition-all" />
-          </a>
-
-          <a
-            href="https://www.facebook.com/tien.phat.516688"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between p-6 rounded-2xl border border-white/5 bg-surface/40 backdrop-blur-md hover:bg-surface/60 hover:border-accent/40 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(57,255,136,0.1)] hover:-translate-y-1"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                <FacebookIcon className="w-5 h-5 text-accent" />
-              </div>
-              <div>
-                <p className="text-xs text-muted mb-1 font-[family-name:var(--font-mono)]">Facebook</p>
-                <p className="font-semibold text-sm md:text-base text-text group-hover:text-accent transition-colors">Nguyễn Văn Tiến Phát</p>
               </div>
             </div>
             <ArrowRight className="w-5 h-5 text-muted group-hover:text-accent group-hover:translate-x-1 transition-all" />
