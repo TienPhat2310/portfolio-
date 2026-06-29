@@ -86,7 +86,7 @@ export default function Hero() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/CV_NguyenTienPhat.pdf"
+              href="/Nguyen_Van_Tien_Phat_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-border bg-surface/40 backdrop-blur-md px-6 py-3 text-sm font-semibold hover:border-accent hover:shadow-[0_0_15px_rgba(57,255,136,0.15)] transition-all flex items-center gap-2 group"
