@@ -32,7 +32,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24">
       <div className="flex flex-col items-center mb-16">
-        <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-white/10 bg-surface/20 backdrop-blur-3xl text-accent text-sm tracking-widest mb-6">
+        <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-border bg-surface  text-accent text-sm tracking-widest mb-6">
           CONNECT
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-center">Liên hệ</h2>
@@ -48,7 +48,7 @@ export default function Contact() {
             href="https://www.facebook.com/tien.phat.516688"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-6 rounded-3xl border border-white/5 bg-surface/40 backdrop-blur-3xl hover:bg-surface/60 hover:border-white/20 transition-all duration-300 group hover:shadow-lg hover:-translate-y-1"
+            className="flex items-center justify-between p-6 rounded-3xl border border-border bg-surface  hover:bg-surface hover:border-border transition-all duration-300 group  hover:-translate-y-1"
           >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
@@ -64,7 +64,7 @@ export default function Contact() {
 
           <a
             href="mailto:nguyenphat0976459403@gmail.com"
-            className="flex items-center justify-between p-6 rounded-3xl border border-white/5 bg-surface/40 backdrop-blur-3xl hover:bg-surface/60 hover:border-white/20 transition-all duration-300 group hover:shadow-lg hover:-translate-y-1"
+            className="flex items-center justify-between p-6 rounded-3xl border border-border bg-surface  hover:bg-surface hover:border-border transition-all duration-300 group  hover:-translate-y-1"
           >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
@@ -82,7 +82,7 @@ export default function Contact() {
             href="https://github.com/TienPhat2310"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-6 rounded-3xl border border-white/5 bg-surface/40 backdrop-blur-3xl hover:bg-surface/60 hover:border-white/20 transition-all duration-300 group hover:shadow-lg hover:-translate-y-1"
+            className="flex items-center justify-between p-6 rounded-3xl border border-border bg-surface  hover:bg-surface hover:border-border transition-all duration-300 group  hover:-translate-y-1"
           >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
@@ -98,7 +98,7 @@ export default function Contact() {
         </div>
 
         {/* CỘT PHẢI - Form */}
-        <div className="lg:col-span-3 bg-surface/40 backdrop-blur-3xl p-8 rounded-3xl border border-white/5 relative overflow-hidden group">
+        <div className="lg:col-span-3 bg-surface  p-8 rounded-3xl border border-border relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-accent/10 transition-colors duration-500"></div>
           
           <h3 className="text-xl font-bold text-text mb-6 relative z-10">Gửi tin nhắn</h3>
@@ -114,7 +114,7 @@ export default function Contact() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors backdrop-blur-md"
+                  className="bg-surface border border-border rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors "
                   placeholder="Nguyễn Văn A"
                 />
               </div>
@@ -127,7 +127,7 @@ export default function Contact() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors backdrop-blur-md"
+                  className="bg-surface border border-border rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors "
                   placeholder="email@example.com"
                 />
               </div>
@@ -142,14 +142,14 @@ export default function Contact() {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors resize-none backdrop-blur-md"
+                className="bg-surface border border-border rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors resize-none "
                 placeholder="Bạn muốn trao đổi về..."
               />
             </div>
             
             <button
               type="submit"
-              className="mt-4 bg-accent text-black font-bold py-3 px-6 rounded-xl hover:opacity-90 transition-all font-[family-name:var(--font-mono)] text-sm shadow-[0_0_20px_rgba(41,151,255,0.2)] hover:shadow-[0_0_30px_rgba(41,151,255,0.4)] hover:-translate-y-0.5"
+              className="mt-4 bg-accent text-black font-bold py-3 px-6 rounded-xl hover:opacity-90 transition-all font-[family-name:var(--font-mono)] text-sm  hover: hover:-translate-y-0.5"
             >
               GỬI TIN NHẮN
             </button>

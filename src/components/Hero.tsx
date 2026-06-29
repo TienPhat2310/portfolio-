@@ -51,7 +51,7 @@ export default function Hero() {
           >
             Securing systems,
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-warm">
+            <span className="text-accent">
               one log at a time.
             </span>
           </motion.h1>
@@ -80,7 +80,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#contact"
-              className="rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-white/20 hover:shadow-lg transition-all flex items-center gap-2"
+              className="rounded-full border border-border bg-surface  px-6 py-3 text-sm font-semibold hover:border-border  transition-all flex items-center gap-2"
             >
               Liên hệ
             </motion.a>
@@ -90,7 +90,7 @@ export default function Hero() {
               href="/Nguyen_Van_Tien_Phat_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-white/20 hover:shadow-lg transition-all flex items-center gap-2 group"
+              className="rounded-full border border-border bg-surface  px-6 py-3 text-sm font-semibold hover:border-border  transition-all flex items-center gap-2 group"
             >
               <Download className="w-4 h-4 group-hover:text-accent transition-colors" />
               Tải CV
@@ -105,7 +105,7 @@ export default function Hero() {
         >
           <motion.div 
             whileHover={{ scale: 1.02 }}
-            className="col-span-2 bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 hover:border-white/20 hover:shadow-xl transition-all"
+            className="col-span-2 bg-surface  border border-border rounded-3xl p-6 hover:border-border  transition-all"
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent/20 to-accent-warm/20 border border-accent/30 flex items-center justify-center">
@@ -123,7 +123,7 @@ export default function Hero() {
 
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-white/20 hover:shadow-xl transition-all group"
+            className="bg-surface  border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-border  transition-all group"
           >
             <p className="text-xs text-muted uppercase tracking-wider mb-2 font-[family-name:var(--font-mono)]">Focus</p>
             <h4 className="text-lg font-bold text-text group-hover:text-accent transition-colors">Security & Systems</h4>
@@ -132,7 +132,7 @@ export default function Hero() {
 
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-white/20 hover:shadow-xl transition-all group"
+            className="bg-surface  border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-border  transition-all group"
           >
             <p className="text-xs text-muted uppercase tracking-wider mb-2 font-[family-name:var(--font-mono)]">Academic</p>
             <h4 className="text-lg font-bold text-text group-hover:text-accent-warm transition-colors">GPA: 3.12/4.0</h4>

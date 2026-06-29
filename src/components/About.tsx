@@ -5,13 +5,13 @@ export default function About() {
         
         {/* Left Column - Text */}
         <div className="flex-1">
-          <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-white/10 bg-surface/20 backdrop-blur-3xl text-accent text-sm tracking-widest w-fit mb-6">
+          <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-border bg-surface  text-accent text-sm tracking-widest w-fit mb-6">
             ABOUT ME
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Behind the <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-warm">screens</span>
+            Behind the <span className="text-accent">screens</span>
           </h2>
-          <div className="space-y-6 text-muted text-base md:text-lg leading-relaxed bg-surface/30 backdrop-blur-3xl border border-white/5 rounded-3xl p-8">
+          <div className="space-y-6 text-muted text-base md:text-lg leading-relaxed bg-surface  border border-border rounded-3xl p-8">
             <p>
               Chào bạn, mình là <span className="text-text font-bold">Nguyễn Văn Tiến Phát</span>. 
               Sinh viên năm cuối ngành An toàn thông tin tại HUFLIT, hiện đang là <span className="text-accent-warm font-bold">SOC Intern</span>.
@@ -27,14 +27,14 @@ export default function About() {
 
         {/* Right Column - Glass Terminal */}
         <div className="flex-1 w-full max-w-md lg:max-w-none">
-          <div className="rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl overflow-hidden shadow-lg hover:shadow-xl hover:border-white/20 hover:-translate-y-2 transition-all duration-500 relative group">
+          <div className="rounded-3xl border border-border bg-surface  overflow-hidden shadow-lg  hover:border-border hover:-translate-y-2 transition-all duration-500 relative group">
             
             {/* Terminal Header */}
-            <div className="flex items-center px-4 py-3 border-b border-white/5 bg-black/20">
+            <div className="flex items-center px-4 py-3 border-b border-border bg-surface">
               <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80 shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80 shadow-[0_0_10px_rgba(234,179,8,0.5)]"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+                <div className="w-3 h-3 rounded-full bg-red-500/80 "></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500/80 "></div>
+                <div className="w-3 h-3 rounded-full bg-green-500/80 "></div>
               </div>
               <p className="ml-4 text-xs font-[family-name:var(--font-mono)] text-muted/70">guest@portfolio: ~</p>
             </div>

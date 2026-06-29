@@ -36,13 +36,13 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="w-full border-t border-border bg-surface/50 mt-20 pt-16 pb-8">
+    <footer className="w-full border-t border-border bg-surface mt-20 pt-16 pb-8">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
           {/* Column 1: University Info */}
           <div className="flex gap-4 items-start">
-            <div className="w-14 h-14 shrink-0 bg-white rounded-lg flex items-center justify-center p-1 border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+            <div className="w-14 h-14 shrink-0 bg-white rounded-lg flex items-center justify-center p-1 border border-border ">
               <img 
                 src="/huflit-logo.png" 
                 alt="HUFLIT Logo" 
@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted font-[family-name:var(--font-mono)]">
+        <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted font-[family-name:var(--font-mono)]">
           <p className="text-center md:text-left">
             © 2026 Nguyễn Văn Tiến Phát. All rights reserved. <span className="hidden md:inline mx-2">•</span> <br className="md:hidden" />
             <span className="text-accent/80">☁️ Protected by Cloudflare</span>

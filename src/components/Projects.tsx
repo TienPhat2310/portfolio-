@@ -32,7 +32,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24">
       <div className="flex flex-col items-center mb-16">
-        <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-white/10 bg-surface/20 backdrop-blur-3xl text-accent text-sm tracking-widest mb-6">
+        <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-border bg-surface  text-accent text-sm tracking-widest mb-6">
           PROJECTS
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-center">Featured Work</h2>
@@ -43,12 +43,12 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`group flex flex-col rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-white/20 ${project.borderGlow} overflow-hidden cursor-pointer`}
+            className={`group flex flex-col rounded-3xl border border-border bg-surface  transition-all duration-500 hover:-translate-y-2  hover:border-border ${project.borderGlow} overflow-hidden cursor-pointer`}
           >
             {/* Image Placeholder with Gradient */}
             <div className={`h-48 w-full bg-gradient-to-br ${project.gradient} relative overflow-hidden border-b border-border/50`}>
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-              <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-xl p-2 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <div className="absolute top-4 right-4 bg-surface  p-2 rounded-full border border-border opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
                 <ArrowUpRight className="w-5 h-5 text-white" />
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function Projects() {
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="px-3 py-1.5 text-xs font-medium text-muted bg-black/30 border border-white/5 rounded-md backdrop-blur-md"
+                    className="px-3 py-1.5 text-xs font-medium text-muted bg-surface border border-border rounded-md "
                   >
                     {tag}
                   </span>
