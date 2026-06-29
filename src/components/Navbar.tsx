@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -35,7 +36,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 bg-surface px-6 py-2 rounded-full border border-border ">
+        <div className="hidden md:flex gap-8 bg-surface px-6 py-2 rounded-full border border-border items-center">
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -45,6 +46,8 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
+          <div className="w-px h-4 bg-border mx-2"></div>
+          <ThemeToggle />
         </div>
 
         {/* Mobile Toggle */}

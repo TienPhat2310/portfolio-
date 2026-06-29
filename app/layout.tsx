@@ -17,14 +17,18 @@ export const metadata: Metadata = {
   description: "Cybersecurity Student & SOC Intern",
 };
 
+import { ThemeProvider } from "../src/components/ThemeProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="vi">
+    <html lang="vi" suppressHydrationWarning>
       <body className={`${mono.variable} ${inter.variable} antialiased font-[family-name:var(--font-sans)]`}>
-        <div className="bg-mesh"></div>
-        {children}
+        <ThemeProvider>
+          <div className="bg-mesh"></div>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

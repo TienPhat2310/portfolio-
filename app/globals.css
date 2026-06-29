@@ -1,13 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #050505;
-  --color-surface: #111111;
-  --color-border: #222222;
-  --color-text: #ededed;
-  --color-muted: #888888;
-  --color-accent: #00ff66;
-  --color-accent-warm: #00cc55;
+  --color-bg: var(--theme-bg);
+  --color-surface: var(--theme-surface);
+  --color-border: var(--theme-border);
+  --color-text: var(--theme-text);
+  --color-muted: var(--theme-muted);
+  --color-accent: var(--theme-accent);
+  --color-accent-warm: var(--theme-accent-warm);
+}
+
+:root {
+  --theme-bg: #ffffff;
+  --theme-surface: #f4f4f5;
+  --theme-border: #e4e4e7;
+  --theme-text: #09090b;
+  --theme-muted: #71717a;
+  --theme-accent: #059669;
+  --theme-accent-warm: #16a34a;
+}
+
+.dark {
+  --theme-bg: #050505;
+  --theme-surface: #111111;
+  --theme-border: #222222;
+  --theme-text: #ededed;
+  --theme-muted: #888888;
+  --theme-accent: #00ff66;
+  --theme-accent-warm: #00cc55;
 }
 
 html {
@@ -19,9 +39,15 @@ body {
   color: var(--color-text);
   overflow-x: hidden;
   background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark body {
+  background-image: 
     linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
 }
 
 /* Removed AI mesh glow */
