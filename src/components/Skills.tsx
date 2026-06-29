@@ -44,7 +44,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24">
       <div className="flex flex-col items-center mb-16">
-        <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-border bg-surface/50 text-accent text-sm tracking-widest mb-6">
+        <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-white/10 bg-surface/20 backdrop-blur-3xl text-accent text-sm tracking-widest mb-6">
           EXPERTISE
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-center">Kỹ năng chuyên môn</h2>
@@ -54,7 +54,7 @@ export default function Skills() {
         {skillsData.map((skill, index) => (
           <div
             key={index}
-            className={`relative p-8 rounded-2xl border border-white/5 bg-surface/40 backdrop-blur-md overflow-hidden transition-all duration-500 hover:-translate-y-1 ${skill.className} ${skill.borderGlow} group`}
+            className={`relative p-8 rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1 ${skill.className} ${skill.borderGlow} hover:border-white/20 group`}
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
             
@@ -70,7 +70,7 @@ export default function Skills() {
       </div>
 
       {/* Tech Stack tags */}
-      <div className="p-8 rounded-2xl border border-white/5 bg-surface/40 backdrop-blur-md relative overflow-hidden">
+      <div className="p-8 rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-20"></div>
         <h3 className="font-[family-name:var(--font-mono)] text-accent/80 text-sm mb-6 flex items-center gap-2">
           <span className="text-muted">❯</span> tech_stack.json
@@ -79,7 +79,7 @@ export default function Skills() {
           {techStack.map((tech, index) => (
             <span
               key={index}
-              className="px-4 py-2 bg-black/40 border border-white/5 text-muted text-sm font-medium rounded-lg hover:border-accent/50 hover:text-accent hover:shadow-[0_0_15px_rgba(57,255,136,0.2)] hover:-translate-y-0.5 transition-all cursor-default backdrop-blur-sm"
+              className="px-4 py-2 bg-black/40 border border-white/5 text-muted text-sm font-medium rounded-lg hover:border-accent/50 hover:text-accent hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-default backdrop-blur-md"
             >
               {tech}
             </span>

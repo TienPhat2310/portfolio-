@@ -72,7 +72,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#projects"
-              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-black hover:opacity-90 transition-all shadow-[0_0_20px_rgba(57,255,136,0.4)] flex items-center gap-2"
+              className="rounded-full bg-text px-6 py-3 text-sm font-semibold text-black hover:opacity-90 transition-all shadow-lg shadow-white/10 flex items-center gap-2"
             >
               Xem Projects <ArrowRight className="w-4 h-4" />
             </motion.a>
@@ -80,7 +80,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#contact"
-              className="rounded-full border border-border bg-surface/40 backdrop-blur-md px-6 py-3 text-sm font-semibold hover:border-accent hover:shadow-[0_0_15px_rgba(57,255,136,0.15)] transition-all flex items-center gap-2"
+              className="rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-white/20 hover:shadow-lg transition-all flex items-center gap-2"
             >
               Liên hệ
             </motion.a>
@@ -90,7 +90,7 @@ export default function Hero() {
               href="/Nguyen_Van_Tien_Phat_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-border bg-surface/40 backdrop-blur-md px-6 py-3 text-sm font-semibold hover:border-accent hover:shadow-[0_0_15px_rgba(57,255,136,0.15)] transition-all flex items-center gap-2 group"
+              className="rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-white/20 hover:shadow-lg transition-all flex items-center gap-2 group"
             >
               <Download className="w-4 h-4 group-hover:text-accent transition-colors" />
               Tải CV
@@ -105,7 +105,7 @@ export default function Hero() {
         >
           <motion.div 
             whileHover={{ scale: 1.02 }}
-            className="col-span-2 bg-surface/40 backdrop-blur-md border border-border rounded-2xl p-6 hover:border-accent/40 hover:shadow-[0_0_15px_rgba(57,255,136,0.1)] transition-all"
+            className="col-span-2 bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 hover:border-white/20 hover:shadow-xl transition-all"
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent/20 to-accent-warm/20 border border-accent/30 flex items-center justify-center">
@@ -123,7 +123,7 @@ export default function Hero() {
 
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="bg-surface/40 backdrop-blur-md border border-border rounded-2xl p-6 flex flex-col justify-between hover:border-accent/40 hover:shadow-[0_0_15px_rgba(57,255,136,0.1)] transition-all group"
+            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-white/20 hover:shadow-xl transition-all group"
           >
             <p className="text-xs text-muted uppercase tracking-wider mb-2 font-[family-name:var(--font-mono)]">Focus</p>
             <h4 className="text-lg font-bold text-text group-hover:text-accent transition-colors">Security & Systems</h4>
@@ -132,7 +132,7 @@ export default function Hero() {
 
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="bg-surface/40 backdrop-blur-md border border-border rounded-2xl p-6 flex flex-col justify-between hover:border-accent/40 hover:shadow-[0_0_15px_rgba(57,255,136,0.1)] transition-all group"
+            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-white/20 hover:shadow-xl transition-all group"
           >
             <p className="text-xs text-muted uppercase tracking-wider mb-2 font-[family-name:var(--font-mono)]">Academic</p>
             <h4 className="text-lg font-bold text-text group-hover:text-accent-warm transition-colors">GPA: 3.12/4.0</h4>
