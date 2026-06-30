@@ -1,76 +1,93 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Home, User, Code2, Briefcase, Mail } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { name: "Home", url: "#home", icon: Home },
+  { name: "About", url: "#about", icon: User },
+  { name: "Skills", url: "#skills", icon: Code2 },
+  { name: "Projects", url: "#projects", icon: Briefcase },
+  { name: "Contact", url: "#contact", icon: Mail },
 ];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [activeTab, setActiveTab] = useState(navItems[0].name);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const scrollPosition = window.scrollY + 120;
+      
+      for (const item of navItems) {
+        const element = document.getElementById(item.url.substring(1));
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveTab(item.name);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-surface/70 backdrop-blur-3xl border-b border-white/5 py-4" : "bg-transparent py-6"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#home" className="text-xl font-bold font-[family-name:var(--font-mono)] tracking-tight">
-          Phat<span className="text-accent">Nguyen</span>
-        </a>
+    <div className="fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:mb-0 sm:pt-6">
+      <div className="flex items-center gap-1 sm:gap-2 bg-surface/50 border border-border backdrop-blur-xl py-1 px-1.5 rounded-full shadow-2xl">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          const isActive = activeTab === item.name;
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 bg-surface/40 px-6 py-2 rounded-full border border-white/5 backdrop-blur-3xl items-center">
-          {navItems.map((item) => (
+          return (
             <a
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-muted hover:text-accent transition-colors"
+              key={item.name}
+              href={item.url}
+              onClick={() => setActiveTab(item.name)}
+              className={`relative cursor-pointer text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 rounded-full transition-all duration-300 flex items-center justify-center ${
+                isActive 
+                  ? "text-accent bg-accent/5" 
+                  : "text-muted hover:text-accent"
+              }`}
             >
-              {item.label}
+              <span className="hidden md:inline">{item.name}</span>
+              <span className="md:hidden">
+                <Icon size={18} strokeWidth={2.2} />
+              </span>
+              
+              {isActive && (
+                <motion.div
+                  layoutId="lamp"
+                  className="absolute inset-0 w-full bg-accent/5 rounded-full -z-10"
+                  initial={false}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 30,
+                  }}
+                >
+                  {/* Glowing lamp indicator */}
+                  <div className="absolute -top-1 sm:top-auto sm:-bottom-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-accent rounded-t-full sm:rounded-t-none sm:rounded-b-full">
+                    <div className="absolute w-12 h-6 bg-accent/25 rounded-full blur-md -top-2 -left-2 sm:top-auto sm:-bottom-2" />
+                    <div className="absolute w-8 h-6 bg-accent/25 rounded-full blur-sm -top-1 sm:top-auto sm:-bottom-1" />
+                  </div>
+                </motion.div>
+              )}
             </a>
-          ))}
-          <div className="w-px h-4 bg-border mx-2"></div>
-          <ThemeToggle />
+          );
+        })}
+        
+        <div className="w-px h-6 bg-border mx-1"></div>
+        <div className="px-1 flex items-center justify-center">
+          <ThemeToggle className="hover:border-accent hover:bg-accent/5" />
         </div>
-
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-muted hover:text-accent" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <Menu />}
-        </button>
       </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-3xl border-b border-border py-4 flex flex-col items-center gap-4">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className="text-base font-medium text-muted hover:text-accent transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-      )}
-    </nav>
+    </div>
   );
 }

@@ -4,7 +4,9 @@ import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export default function ThemeToggle() {
+type ThemeToggleProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+export default function ThemeToggle({ className = "", ...props }: ThemeToggleProps) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -20,8 +22,9 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-full border border-border bg-surface text-muted hover:text-accent hover:border-accent transition-all"
+      className={`p-2 rounded-full text-muted hover:text-accent transition-all ${className}`}
       aria-label="Toggle theme"
+      {...props}
     >
       {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
     </button>
