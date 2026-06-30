@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-surface  border-b border-border py-4" : "bg-transparent py-6"
+        scrolled ? "bg-surface/70 backdrop-blur-3xl border-b border-white/5 py-4" : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -36,7 +36,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 bg-surface px-6 py-2 rounded-full border border-border items-center">
+        <div className="hidden md:flex gap-8 bg-surface/40 px-6 py-2 rounded-full border border-white/5 backdrop-blur-3xl items-center">
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -58,7 +58,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-surface  border-b border-border py-4 flex flex-col items-center gap-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-3xl border-b border-border py-4 flex flex-col items-center gap-4">
           {navItems.map((item) => (
             <a
               key={item.label}
