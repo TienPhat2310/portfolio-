@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import TiltCard from "./TiltCard";
 
 const projects = [
   {
@@ -41,7 +42,7 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div
+          <TiltCard
             key={index}
             className={`group flex flex-col rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-white/20 ${project.borderGlow} overflow-hidden cursor-pointer`}
           >
@@ -82,7 +83,7 @@ export default function Projects() {
                 ))}
               </div>
             </div>
-          </div>
+          </TiltCard>
         ))}
       </div>
     </section>

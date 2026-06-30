@@ -1,3 +1,5 @@
+import TiltCard from "./TiltCard";
+
 export default function About() {
   return (
     <section id="about" className="py-24">
@@ -27,7 +29,7 @@ export default function About() {
 
         {/* Right Column - Glass Terminal */}
         <div className="flex-1 w-full max-w-md lg:max-w-none">
-          <div className="rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl overflow-hidden shadow-lg hover:shadow-xl hover:border-white/20 hover:-translate-y-2 transition-all duration-500 relative group">
+          <TiltCard className="rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl overflow-hidden shadow-lg hover:shadow-xl hover:border-white/20 hover:-translate-y-2 transition-all duration-500 relative group cursor-pointer" scale={1.02}>
             
             {/* Terminal Header */}
             <div className="flex items-center px-4 py-3 border-b border-white/5 bg-black/20">
@@ -67,7 +69,7 @@ export default function About() {
             
             {/* Ambient Glow inside terminal */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-accent/10 transition-colors duration-500"></div>
-          </div>
+          </TiltCard>
         </div>
 
       </div>

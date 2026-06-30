@@ -1,6 +1,7 @@
 "use client";
 import { Download, Terminal, Shield, ArrowRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import TiltCard from "./TiltCard";
 
 export default function Hero() {
   const containerVariants: Variants = {
@@ -103,9 +104,9 @@ export default function Hero() {
           variants={itemVariants}
           className="grid grid-cols-2 gap-4"
         >
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="col-span-2 bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 hover:border-white/20 hover:shadow-xl transition-all"
+          <TiltCard 
+            className="col-span-2 bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 hover:border-white/20 transition-all cursor-pointer"
+            scale={1.02}
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent/20 to-accent-warm/20 border border-accent/30 flex items-center justify-center">
@@ -119,25 +120,25 @@ export default function Hero() {
             <p className="text-sm text-muted">
               Đam mê giám sát an toàn thông tin, phân tích log và tự động hoá quy trình (SOAR).
             </p>
-          </motion.div>
+          </TiltCard>
 
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-white/20 hover:shadow-xl transition-all group"
+          <TiltCard 
+            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-white/20 transition-all group cursor-pointer"
+            scale={1.05}
           >
             <p className="text-xs text-muted uppercase tracking-wider mb-2 font-[family-name:var(--font-mono)]">Focus</p>
             <h4 className="text-lg font-bold text-text group-hover:text-accent transition-colors">Security & Systems</h4>
             <Shield className="w-6 h-6 text-muted mt-4 opacity-50" />
-          </motion.div>
+          </TiltCard>
 
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-white/20 hover:shadow-xl transition-all group"
+          <TiltCard 
+            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-white/20 transition-all group cursor-pointer"
+            scale={1.05}
           >
             <p className="text-xs text-muted uppercase tracking-wider mb-2 font-[family-name:var(--font-mono)]">Academic</p>
             <h4 className="text-lg font-bold text-text group-hover:text-accent-warm transition-colors">GPA: 3.12/4.0</h4>
             <p className="text-sm text-muted mt-2">Senior Year, HUFLIT</p>
-          </motion.div>
+          </TiltCard>
         </motion.div>
 
       </motion.div>

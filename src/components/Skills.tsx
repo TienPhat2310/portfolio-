@@ -1,5 +1,6 @@
 import React from "react";
 import { Search, Zap, BrainCircuit, Globe } from "lucide-react";
+import TiltCard from "./TiltCard";
 
 const skillsData = [
   {
@@ -52,9 +53,9 @@ export default function Skills() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         {skillsData.map((skill, index) => (
-          <div
+          <TiltCard
             key={index}
-            className={`relative p-8 rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1 ${skill.className} ${skill.borderGlow} hover:border-white/20 group`}
+            className={`relative p-8 rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1 ${skill.className} ${skill.borderGlow} hover:border-white/20 group cursor-pointer`}
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
             
@@ -65,7 +66,7 @@ export default function Skills() {
               <h3 className="text-2xl font-bold mb-3 text-text">{skill.title}</h3>
               <p className="text-muted text-base leading-relaxed">{skill.description}</p>
             </div>
-          </div>
+          </TiltCard>
         ))}
       </div>
 
