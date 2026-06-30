@@ -20,7 +20,7 @@ export default function About() {
               Đam mê lớn nhất của mình là phân tích log, phát hiện các mối đe dọa (Threat Detection) và tối ưu hóa quy trình phản ứng sự cố (Incident Response). Mình có kinh nghiệm triển khai và vận hành các nền tảng SIEM như <strong className="text-text">Wazuh</strong>, <strong className="text-text">KUMA</strong> và xây dựng các playbook tự động hóa bằng <strong className="text-text">n8n</strong>.
             </p>
             <p>
-              Hiện tại, mình đang tập trung hoàn thành đồ án tốt nghiệp với đề tài <span className="text-accent italic font-medium">"Phân loại lỗi mạng SDN bằng AI"</span> — một sự kết hợp thú vị giữa bảo mật mạng Software-Defined Networking và Machine Learning.
+              Hiện tại, mình đang tập trung hoàn thành đồ án tốt nghiệp với đề tài <span className="text-accent italic font-medium">&quot;Phân loại lỗi mạng SDN bằng AI&quot;</span> — một sự kết hợp thú vị giữa bảo mật mạng Software-Defined Networking và Machine Learning.
             </p>
           </div>
         </div>

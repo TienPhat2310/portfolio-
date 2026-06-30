@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { ExternalLink, Eye, Users, GraduationCap } from "lucide-react";
+import { ExternalLink, Eye, Users } from "lucide-react";
 
 export default function Footer() {
   const [views, setViews] = useState<number | null>(null);
