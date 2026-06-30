@@ -4,17 +4,17 @@ import TiltCard from "./TiltCard";
 
 const projects = [
   {
-    title: "SOC Lab — pfSense + Suricata + Wazuh + n8n",
-    description: "Hệ thống lab tự xây, tích hợp IDS (Suricata), SIEM (Wazuh), tự động hoá phản ứng sự cố qua n8n và cảnh báo Telegram.",
-    tags: ["pfSense", "Suricata", "Wazuh", "n8n"],
-    category: "SYSTEM",
+    title: "Enterprise SOC Integration — pfSense + Suricata + Wazuh + n8n",
+    description: "Đồ án cuối kỳ: Thiết kế và triển khai hệ thống giám sát an toàn thông tin doanh nghiệp, tích hợp tường lửa pfSense, IDS/IPS Suricata, Wazuh SIEM và tự động hoá quy trình phản ứng sự cố (SOAR) qua n8n cảnh báo Telegram.",
+    tags: ["pfSense", "Suricata", "Wazuh SIEM", "n8n SOAR"],
+    category: "SYSTEM & SECURITY",
     gradient: "from-emerald-500/20 to-teal-900/40",
     borderGlow: "group-hover:border-emerald-500/50",
   },
   {
-    title: "KUMA SIEM — Web Attack Detection",
-    description: "Triển khai KUMA SIEM tại DTG Corp, viết 5 correlation rules phát hiện tấn công web, soạn IRM playbook theo NIST SP 800-61r2.",
-    tags: ["KUMA SIEM", "Linux", "NIST"],
+    title: "Kaspersky KUMA SIEM & SOAR Integration",
+    description: "Kinh nghiệm thực tế (SOC Intern): Triển khai hệ thống SIEM doanh nghiệp (Kaspersky KUMA), cấu hình agent thu thập log Web Server, xây dựng 5 quy tắc tương quan phát hiện tấn công (SQLi, Web Shell) và tích hợp luồng tự động phản ứng (n8n) & nền tảng điều tra DFIR-IRIS theo tiêu chuẩn NIST SP 800-61r2.",
+    tags: ["KUMA SIEM", "n8n SOAR", "DFIR-IRIS", "NIST"],
     category: "CYBERSECURITY",
     gradient: "from-blue-500/20 to-indigo-900/40",
     borderGlow: "group-hover:border-blue-500/50",
