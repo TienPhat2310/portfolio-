@@ -19,19 +19,19 @@ export default function Footer() {
     
     if (!hasVisited) {
       // First time visitor
-      fetch("https://api.counterapi.dev/v1/tienphat_portfolio/visitors/up")
+      fetch("https://api.counterapi.dev/v1/tienphat_portfolio/uv/up")
         .then((res) => res.json())
         .then((data) => {
-          setVisitors(data.count);
+          setVisitors(data.count + 95);
           localStorage.setItem("has_visited_tienphat", "true");
         })
-        .catch(() => setVisitors(61)); // Fallback
+        .catch(() => setVisitors(125)); // Fallback
     } else {
       // Returning visitor, just get the count
-      fetch("https://api.counterapi.dev/v1/tienphat_portfolio/visitors")
+      fetch("https://api.counterapi.dev/v1/tienphat_portfolio/uv")
         .then((res) => res.json())
-        .then((data) => setVisitors(data.count))
-        .catch(() => setVisitors(61)); // Fallback
+        .then((data) => setVisitors(data.count + 95))
+        .catch(() => setVisitors(125)); // Fallback
     }
   }, []);
 
