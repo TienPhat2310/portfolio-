@@ -41,13 +41,9 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
   };
 
   return (
-    <motion.a
+    <a
       href={resumeUrl}
       download={fileName}
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ scale: downloadStatus === "idle" ? 1.05 : 1 }}
-      whileTap={{ scale: downloadStatus === "idle" ? 0.95 : 1 }}
       onClick={(e) => {
         if (downloadStatus !== "idle") {
           e.preventDefault();
@@ -55,7 +51,7 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
         }
         handleStartAnimation();
       }}
-      className={`rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-accent/30 hover:shadow-lg transition-all flex items-center justify-center gap-2 group relative overflow-hidden select-none cursor-pointer min-w-[130px] ${
+      className={`rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-accent/30 hover:shadow-lg transition-all flex items-center justify-center gap-2 group relative overflow-hidden select-none cursor-pointer min-w-[130px] hover:scale-105 active:scale-95 duration-200 ${
         downloadStatus !== "idle" ? "pointer-events-none" : ""
       } ${className}`}
     >
@@ -88,6 +84,6 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
           </>
         )}
       </span>
-    </motion.a>
+    </a>
   );
 }
