@@ -104,8 +104,8 @@ export default function Hero() {
           variants={itemVariants}
           className="grid grid-cols-2 gap-4"
         >
-          <TiltCard 
-            className="col-span-2 bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 hover:border-white/20 transition-all cursor-pointer"
+                  <TiltCard 
+            className="col-span-2 bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5 transition-all cursor-pointer"
             scale={1.02}
           >
             <div className="flex items-center gap-4 mb-4">
@@ -123,16 +123,16 @@ export default function Hero() {
           </TiltCard>
 
           <TiltCard 
-            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-white/20 transition-all group cursor-pointer"
+            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5 transition-all group cursor-pointer"
             scale={1.05}
           >
             <p className="text-xs text-muted uppercase tracking-wider mb-2 font-[family-name:var(--font-mono)]">Focus</p>
             <h4 className="text-lg font-bold text-text group-hover:text-accent transition-colors">Security & Systems</h4>
-            <Shield className="w-6 h-6 text-muted mt-4 opacity-50" />
+            <Shield className="w-6 h-6 text-muted mt-4 opacity-50 group-hover:text-accent group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
           </TiltCard>
 
           <TiltCard 
-            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-white/20 transition-all group cursor-pointer"
+            className="bg-surface/40 backdrop-blur-3xl border border-border rounded-3xl p-6 flex flex-col justify-between hover:border-accent-warm/30 hover:shadow-2xl hover:shadow-accent-warm/5 transition-all group cursor-pointer"
             scale={1.05}
           >
             <p className="text-xs text-muted uppercase tracking-wider mb-2 font-[family-name:var(--font-mono)]">Academic</p>

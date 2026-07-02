@@ -6,6 +6,7 @@ interface TiltCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   maxTilt?: number;
   scale?: number;
+  glareColor?: string;
 }
 
 export default function TiltCard({
@@ -13,6 +14,7 @@ export default function TiltCard({
   className = "",
   maxTilt = 8,
   scale = 1.02,
+  glareColor,
   ...props
 }: TiltCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -42,7 +44,7 @@ export default function TiltCard({
 
     if (glare) {
       glare.style.opacity = "1";
-      glare.style.background = `radial-gradient(circle at ${mouseX}px ${mouseY}px, color-mix(in srgb, var(--color-accent) 15%, transparent), transparent 70%)`;
+      glare.style.background = `radial-gradient(circle at ${mouseX}px ${mouseY}px, ${glareColor || 'color-mix(in srgb, var(--color-accent) 15%, transparent)'}, transparent 70%)`;
       glare.style.transition = "opacity 0.08s ease-out";
     }
   };
@@ -78,7 +80,7 @@ export default function TiltCard({
         className="absolute inset-0 pointer-events-none z-30"
         style={{
           opacity: 0,
-          background: "radial-gradient(circle at 0px 0px, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 70%)",
+          background: `radial-gradient(circle at 0px 0px, ${glareColor || 'color-mix(in srgb, var(--color-accent) 12%, transparent)'}, transparent 70%)`,
           transition: "opacity 0.4s ease",
         }}
       />

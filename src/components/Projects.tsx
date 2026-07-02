@@ -9,7 +9,9 @@ const projects = [
     tags: ["pfSense", "Suricata", "Wazuh SIEM", "n8n SOAR"],
     category: "SYSTEM & SECURITY",
     gradient: "from-emerald-500/20 to-teal-900/40",
-    borderGlow: "group-hover:border-emerald-500/50",
+    borderGlow: "hover:border-emerald-500/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]",
+    textHover: "group-hover:text-emerald-400",
+    glareColor: "color-mix(in srgb, #10b981 15%, transparent)",
   },
   {
     title: "Kaspersky KUMA SIEM & SOAR Integration",
@@ -17,7 +19,9 @@ const projects = [
     tags: ["KUMA SIEM", "n8n SOAR", "DFIR-IRIS", "NIST"],
     category: "CYBERSECURITY",
     gradient: "from-blue-500/20 to-indigo-900/40",
-    borderGlow: "group-hover:border-blue-500/50",
+    borderGlow: "hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+    textHover: "group-hover:text-blue-400",
+    glareColor: "color-mix(in srgb, #3b82f6 15%, transparent)",
   },
   {
     title: "SDN Network Fault Detection — ML & Data Engineering",
@@ -25,7 +29,9 @@ const projects = [
     tags: ["SDN", "Python", "Data Engineering", "Machine Learning"],
     category: "AI/ML & SYSTEM",
     gradient: "from-purple-500/20 to-pink-900/40",
-    borderGlow: "group-hover:border-purple-500/50",
+    borderGlow: "hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]",
+    textHover: "group-hover:text-purple-400",
+    glareColor: "color-mix(in srgb, #a855f7 15%, transparent)",
   },
 ];
 
@@ -44,7 +50,8 @@ export default function Projects() {
         {projects.map((project, index) => (
           <TiltCard
             key={index}
-            className={`group flex flex-col rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-white/20 ${project.borderGlow} overflow-hidden cursor-pointer`}
+            glareColor={project.glareColor}
+            className={`group flex flex-col rounded-3xl border border-white/10 bg-surface/40 backdrop-blur-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${project.borderGlow} overflow-hidden cursor-pointer`}
           >
             {/* Image Placeholder with Gradient */}
             <div className={`h-48 w-full bg-gradient-to-br ${project.gradient} relative overflow-hidden border-b border-border/50`}>
@@ -64,7 +71,7 @@ export default function Projects() {
                 </span>
               </div>
               
-              <h3 className="text-xl font-bold mb-3 text-text group-hover:text-accent transition-colors duration-300">
+              <h3 className={`text-xl font-bold mb-3 text-text ${project.textHover} transition-colors duration-300`}>
                 {project.title}
               </h3>
               
