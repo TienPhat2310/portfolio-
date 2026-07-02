@@ -14,19 +14,7 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
   const [downloadStatus, setDownloadStatus] = useState<"idle" | "downloading" | "downloaded">("idle");
   const [progress, setProgress] = useState(0);
 
-  const handleDownload = () => {
-    if (downloadStatus !== "idle") return;
-
-    // 1. Trigger actual file download synchronously to bypass browser blockers
-    const link = document.createElement("a");
-    link.href = resumeUrl;
-    link.download = fileName;
-    link.target = "_blank";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    // 2. Start progress animation for visual feedback
+  const handleStartAnimation = () => {
     setDownloadStatus("downloading");
     setProgress(0);
 
@@ -53,12 +41,21 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
   };
 
   return (
-    <motion.button
+    <motion.a
+      href={resumeUrl}
+      download={fileName}
+      target="_blank"
+      rel="noopener noreferrer"
       whileHover={{ scale: downloadStatus === "idle" ? 1.05 : 1 }}
       whileTap={{ scale: downloadStatus === "idle" ? 0.95 : 1 }}
-      onClick={handleDownload}
-      disabled={downloadStatus !== "idle"}
-      className={`rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-white/20 hover:shadow-lg transition-all flex items-center justify-center gap-2 group relative overflow-hidden select-none cursor-pointer min-w-[130px] ${
+      onClick={(e) => {
+        if (downloadStatus !== "idle") {
+          e.preventDefault();
+          return;
+        }
+        handleStartAnimation();
+      }}
+      className={`rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-accent/30 hover:shadow-lg transition-all flex items-center justify-center gap-2 group relative overflow-hidden select-none cursor-pointer min-w-[130px] ${
         downloadStatus !== "idle" ? "pointer-events-none" : ""
       } ${className}`}
     >
@@ -91,6 +88,6 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
           </>
         )}
       </span>
-    </motion.button>
+    </motion.a>
   );
 }
