@@ -17,11 +17,20 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
   const handleDownload = () => {
     if (downloadStatus !== "idle") return;
 
+    // 1. Trigger actual file download synchronously to bypass browser blockers
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+    link.download = fileName;
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // 2. Start progress animation for visual feedback
     setDownloadStatus("downloading");
     setProgress(0);
 
-    // Smoothly simulate progress over 1.5 seconds
-    const duration = 1500;
+    const duration = 1200; // slightly faster animation (1.2s) for better responsiveness
     const intervalTime = 30;
     const steps = duration / intervalTime;
     let currentStep = 0;
@@ -33,23 +42,12 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
 
       if (currentStep >= steps) {
         clearInterval(timer);
-        
-        // Trigger actual file download
-        const link = document.createElement("a");
-        link.href = resumeUrl;
-        link.download = fileName;
-        link.target = "_blank";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
         setDownloadStatus("downloaded");
         
-        // Return to idle state after 2.5 seconds
         setTimeout(() => {
           setDownloadStatus("idle");
           setProgress(0);
-        }, 2500);
+        }, 2000);
       }
     }, intervalTime);
   };
