@@ -15,10 +15,12 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
   const [progress, setProgress] = useState(0);
 
   const handleStartAnimation = () => {
+    if (downloadStatus !== "idle") return;
+    
     setDownloadStatus("downloading");
     setProgress(0);
 
-    const duration = 1200; // slightly faster animation (1.2s) for better responsiveness
+    const duration = 1200;
     const intervalTime = 30;
     const steps = duration / intervalTime;
     let currentStep = 0;
@@ -41,12 +43,12 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
   };
 
   return (
-    <button
-      onClick={() => {
-        if (downloadStatus !== "idle") return;
-        window.open(resumeUrl, "_blank");
-        handleStartAnimation();
-      }}
+    <a
+      href={resumeUrl}
+      download={fileName}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={handleStartAnimation}
       className={`rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-accent/30 hover:shadow-lg transition-all flex items-center justify-center gap-2 group relative overflow-hidden select-none cursor-pointer min-w-[130px] hover:scale-105 active:scale-95 duration-200 ${
         downloadStatus !== "idle" ? "pointer-events-none" : ""
       } ${className}`}
@@ -80,6 +82,6 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
           </>
         )}
       </span>
-    </button>
+    </a>
   );
 }
