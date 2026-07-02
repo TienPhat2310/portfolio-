@@ -17,29 +17,35 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
   const handleStartAnimation = () => {
     if (downloadStatus !== "idle") return;
     
-    setDownloadStatus("downloading");
-    setProgress(0);
+    // DELAY the React state update slightly so the browser has time to 
+    // process the native <a> tag click and start the download.
+    // If we update state synchronously, React removes the clicked element 
+    // from the DOM, which causes Chrome to cancel the download action!
+    setTimeout(() => {
+      setDownloadStatus("downloading");
+      setProgress(0);
 
-    const duration = 1200;
-    const intervalTime = 30;
-    const steps = duration / intervalTime;
-    let currentStep = 0;
+      const duration = 1200;
+      const intervalTime = 30;
+      const steps = duration / intervalTime;
+      let currentStep = 0;
 
-    const timer = setInterval(() => {
-      currentStep++;
-      const nextProgress = Math.min(Math.round((currentStep / steps) * 100), 100);
-      setProgress(nextProgress);
+      const timer = setInterval(() => {
+        currentStep++;
+        const nextProgress = Math.min(Math.round((currentStep / steps) * 100), 100);
+        setProgress(nextProgress);
 
-      if (currentStep >= steps) {
-        clearInterval(timer);
-        setDownloadStatus("downloaded");
-        
-        setTimeout(() => {
-          setDownloadStatus("idle");
-          setProgress(0);
-        }, 2000);
-      }
-    }, intervalTime);
+        if (currentStep >= steps) {
+          clearInterval(timer);
+          setDownloadStatus("downloaded");
+          
+          setTimeout(() => {
+            setDownloadStatus("idle");
+            setProgress(0);
+          }, 2000);
+        }
+      }, intervalTime);
+    }, 100);
   };
 
   return (
