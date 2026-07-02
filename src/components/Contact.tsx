@@ -32,7 +32,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24">
       <div className="flex flex-col items-center mb-16">
-        <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-white/10 bg-surface/20 backdrop-blur-3xl text-accent text-sm tracking-widest mb-6">
+        <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-border bg-surface/20 backdrop-blur-3xl text-accent text-sm tracking-widest mb-6">
           CONNECT
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-center">Liên hệ</h2>
@@ -114,7 +114,7 @@ export default function Contact() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors backdrop-blur-md"
+                  className="bg-surface/50 dark:bg-black/30 border border-border dark:border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors backdrop-blur-md"
                   placeholder="Nguyễn Văn A"
                 />
               </div>
@@ -127,7 +127,7 @@ export default function Contact() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors backdrop-blur-md"
+                  className="bg-surface/50 dark:bg-black/30 border border-border dark:border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors backdrop-blur-md"
                   placeholder="email@example.com"
                 />
               </div>
@@ -142,7 +142,7 @@ export default function Contact() {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors resize-none backdrop-blur-md"
+                className="bg-surface/50 dark:bg-black/30 border border-border dark:border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors resize-none backdrop-blur-md"
                 placeholder="Bạn muốn trao đổi về..."
               />
             </div>
