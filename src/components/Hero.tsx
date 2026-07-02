@@ -2,6 +2,7 @@
 import { Download, Terminal, Shield, ArrowRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import TiltCard from "./TiltCard";
+import DownloadButton from "./DownloadButton";
 
 export default function Hero() {
   const containerVariants: Variants = {
@@ -85,17 +86,10 @@ export default function Hero() {
             >
               Liên hệ
             </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="/Nguyen_Van_Tien_Phat_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-white/20 hover:shadow-lg transition-all flex items-center gap-2 group"
-            >
-              <Download className="w-4 h-4 group-hover:text-accent transition-colors" />
-              Tải CV
-            </motion.a>
+            <DownloadButton
+              resumeUrl="/Nguyen_Van_Tien_Phat_Resume.pdf"
+              fileName="Nguyen_Van_Tien_Phat_Resume.pdf"
+            />
           </motion.div>
         </div>
 
