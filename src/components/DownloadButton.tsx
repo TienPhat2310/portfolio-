@@ -18,11 +18,10 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
     if (isDownloading) return;
     setIsDownloading(true);
     try {
-      // Direct anchor click — no fetch, no blob, no popup-blocker issues
+      // Direct anchor click — forces download via download attr, no popup-blocker issues
       const link = document.createElement("a");
       link.href = resumeUrl;
       link.download = fileName;
-      link.target = "_blank";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
