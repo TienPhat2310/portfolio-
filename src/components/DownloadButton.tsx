@@ -14,25 +14,23 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloaded, setDownloaded] = useState(false);
 
-  const handleDownload = async () => {
+  const handleDownload = () => {
     if (isDownloading) return;
     setIsDownloading(true);
     try {
-      const response = await fetch(resumeUrl);
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
+      // Direct anchor click — no fetch, no blob, no popup-blocker issues
       const link = document.createElement("a");
-      link.href = url;
+      link.href = resumeUrl;
       link.download = fileName;
+      link.target = "_blank";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
       setDownloaded(true);
       setTimeout(() => setDownloaded(false), 3000);
     } catch (error) {
       console.error("Download failed:", error);
-      // Fallback
+      // Last-resort fallback (may be blocked by popup blocker on desktop)
       window.open(resumeUrl, "_blank");
     } finally {
       setIsDownloading(false);
