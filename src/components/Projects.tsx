@@ -51,7 +51,7 @@ export default function Projects() {
           <TiltCard
             key={index}
             glareColor={project.glareColor}
-            className={`group flex flex-col rounded-3xl border border-border bg-white/60 dark:bg-surface/40 backdrop-blur-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${project.borderGlow} overflow-hidden cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none`}
+            className={`group flex flex-col rounded-3xl border border-border bg-white dark:bg-surface/40 backdrop-blur-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${project.borderGlow} overflow-hidden cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none`}
           >
             {/* Image Placeholder with Gradient */}
             <div className={`h-48 w-full bg-gradient-to-br ${project.gradient} relative overflow-hidden border-b border-border/50`}>
@@ -83,7 +83,7 @@ export default function Projects() {
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="px-3 py-1.5 text-xs font-medium text-muted bg-white/70 dark:bg-black/30 border border-black/5 dark:border-white/5 rounded-md backdrop-blur-md"
+                    className="px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-muted bg-slate-100 dark:bg-black/30 border border-slate-200 dark:border-white/5 rounded-md backdrop-blur-md"
                   >
                     {tag}
                   </span>

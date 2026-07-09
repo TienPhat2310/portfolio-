@@ -55,7 +55,7 @@ export default function Skills() {
         {skillsData.map((skill, index) => (
           <TiltCard
             key={index}
-            className={`relative p-8 rounded-3xl border border-border bg-white/60 dark:bg-surface/40 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1 ${skill.className} ${skill.borderGlow} hover:border-black/20 dark:hover:border-white/20 group cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none`}
+            className={`relative p-8 rounded-3xl border border-border bg-white dark:bg-surface/40 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1 ${skill.className} ${skill.borderGlow} hover:border-black/20 dark:hover:border-white/20 group cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none`}
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
             
@@ -71,7 +71,7 @@ export default function Skills() {
       </div>
 
       {/* Tech Stack tags */}
-      <div className="p-8 rounded-3xl border border-border bg-white/60 dark:bg-surface/40 backdrop-blur-3xl relative overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none">
+      <div className="p-8 rounded-3xl border border-border bg-white dark:bg-surface/40 backdrop-blur-3xl relative overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-20"></div>
         <h3 className="font-[family-name:var(--font-mono)] text-accent/80 text-sm mb-6 flex items-center gap-2">
           <span className="text-muted">❯</span> tech_stack.json
@@ -80,7 +80,7 @@ export default function Skills() {
           {techStack.map((tech, index) => (
             <span
               key={index}
-              className="px-4 py-2 bg-white/70 dark:bg-black/40 border border-black/5 dark:border-white/5 text-muted text-sm font-medium rounded-lg hover:border-accent/50 hover:text-accent dark:hover:text-accent hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-default backdrop-blur-md"
+              className="px-4 py-2 bg-slate-100 dark:bg-black/40 border border-slate-200 dark:border-white/5 text-slate-700 dark:text-muted text-sm font-medium rounded-lg hover:border-accent/50 hover:text-accent dark:hover:text-accent hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-default backdrop-blur-md"
             >
               {tech}
             </span>
