@@ -74,7 +74,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#projects"
-              className="rounded-full bg-text px-6 py-3 text-sm font-semibold text-bg hover:opacity-90 transition-all shadow-lg shadow-white/10 flex items-center gap-2"
+              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white dark:text-black hover:opacity-90 transition-all shadow-lg shadow-accent/20 flex items-center gap-2"
             >
               Xem Projects <ArrowRight className="w-4 h-4" />
             </motion.a>

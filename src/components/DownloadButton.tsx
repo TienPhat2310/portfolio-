@@ -11,17 +11,50 @@ interface DownloadButtonProps {
 }
 
 export default function DownloadButton({ className = "", resumeUrl, fileName }: DownloadButtonProps) {
-  // Dummy comment to force a Vercel rebuild (trigger webhook)
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [downloaded, setDownloaded] = useState(false);
+
+  const handleDownload = async () => {
+    if (isDownloading) return;
+    setIsDownloading(true);
+    try {
+      const response = await fetch(resumeUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      setDownloaded(true);
+      setTimeout(() => setDownloaded(false), 3000);
+    } catch (error) {
+      console.error("Download failed:", error);
+      // Fallback
+      window.open(resumeUrl, "_blank");
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   return (
-    <a
-      href={resumeUrl}
-      download={fileName}
-      className={`rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-accent/30 hover:shadow-lg transition-all flex items-center justify-center gap-2 group relative overflow-hidden select-none cursor-pointer min-w-[130px] hover:scale-105 active:scale-95 duration-200 ${className}`}
+    <button
+      onClick={handleDownload}
+      disabled={isDownloading}
+      className={`rounded-full border border-border bg-white dark:bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-accent/30 hover:shadow-lg transition-all flex items-center justify-center gap-2 group relative overflow-hidden select-none cursor-pointer min-w-[130px] hover:scale-105 active:scale-95 duration-200 disabled:opacity-70 disabled:cursor-not-allowed ${className}`}
     >
       <span className="relative z-10 flex items-center gap-2">
-        <Download className="w-4 h-4 group-hover:text-accent transition-colors" />
-        <span>Tải CV</span>
+        {isDownloading ? (
+          <Loader2 className="w-4 h-4 animate-spin text-accent" />
+        ) : downloaded ? (
+          <CheckCircle className="w-4 h-4 text-accent-warm" />
+        ) : (
+          <Download className="w-4 h-4 group-hover:text-accent transition-colors" />
+        )}
+        <span>{isDownloading ? "Đang tải..." : downloaded ? "Đã tải xong!" : "Tải CV"}</span>
       </span>
-    </a>
+    </button>
   );
 }
