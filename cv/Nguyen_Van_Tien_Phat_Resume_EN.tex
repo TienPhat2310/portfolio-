@@ -1,0 +1,125 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=0.75in}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{tabularx}
+
+% Colors
+\definecolor{primaryColor}{RGB}{33, 50, 94}
+\definecolor{secondaryColor}{RGB}{62, 73, 122}
+
+% Links and PDF metadata
+\hypersetup{
+    colorlinks=true,
+    urlcolor=primaryColor,
+    pdftitle={Nguyen Van Tien Phat - Cybersecurity Resume},
+    pdfauthor={Nguyen Van Tien Phat},
+    pdfsubject={SOC Analyst and Cybersecurity Resume},
+    pdfkeywords={SOC Analyst, Cybersecurity, SIEM, SOAR, Wazuh, Kaspersky KUMA}
+}
+
+% Section formatting
+\titleformat{\section}{\Large\bfseries\color{primaryColor}}{}{0em}{}[\color{primaryColor}\titlerule]
+\titlespacing*{\section}{0pt}{1.05ex plus .5ex minus .2ex}{.65ex plus .2ex}
+\setlist[itemize]{itemsep=1pt, topsep=1pt, parsep=0pt, partopsep=0pt}
+
+% Resume helpers
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabularx}{\linewidth}[t]{@{}Xr@{}}
+      \textbf{#1} & \textbf{#2} \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabularx}\vspace{-1pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-1pt}\item
+    \begin{tabularx}{\linewidth}[t]{@{}Xr@{}}
+      \textbf{#1} & \textbf{#2} \\
+    \end{tabularx}\vspace{-1pt}
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\Huge \textbf{\color{primaryColor} Nguyen Van Tien Phat}} \\ \vspace{8pt}
+    \small \faPhone\ 0976 459 403 \quad
+    \faEnvelope\ \href{mailto:nguyenphat0976459403@gmail.com}{nguyenphat0976459403@gmail.com} \\ \vspace{3pt}
+    \faGlobe\ \href{https://tienphat.tech}{tienphat.tech} \quad
+    \faMapMarker\ Ho Chi Minh City, Vietnam
+\end{center}
+
+% Professional summary
+\section*{PROFESSIONAL SUMMARY}
+Cybersecurity student pursuing a career in security operations, with hands-on experience configuring network and monitoring infrastructure, analyzing security logs, and automating incident response workflows. Experienced with Kaspersky KUMA, Wazuh, Suricata, pfSense, and n8n. Seeking a SOC Intern or Security Analyst role to strengthen detection engineering skills and contribute to enterprise security operations.
+
+% Education
+\section*{EDUCATION}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \resumeSubheading
+    {Ho Chi Minh City University of Foreign Languages and Information Technology (HUFLIT)}{09/2023 - 05/2026}
+    {Cybersecurity, Faculty of Information Technology}{Ho Chi Minh City, Vietnam}
+\end{itemize}
+
+% Work experience
+\section*{WORK EXPERIENCE}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \resumeSubheading
+    {Confidential Technology Company}{01/2026 - 05/2026}
+    {SOC Intern}{Ho Chi Minh City, Vietnam}
+    \begin{itemize}[leftmargin=0.15in, label=\textbullet]
+        \item Deployed and configured Kaspersky KUMA SIEM to monitor Apache and Nginx web server logs; developed correlation rules to detect DDoS activity, web scanning, and website defacement.
+        \item Built attack-scenario proofs of concept and corresponding monitoring use cases to validate SOC infrastructure and detection coverage.
+        \item Authored incident response playbooks and swimlane workflows aligned with NIST SP 800-61 Rev. 2.
+    \end{itemize}
+\end{itemize}
+
+% Projects
+\section*{SELECTED PROJECTS}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \resumeProjectHeading
+    {SDN Centralized Log Collection System}{03/2026 - 05/2026}
+    \begin{itemize}[leftmargin=0.15in, label=\textbullet]
+        \item Built a software-defined networking lab with \textbf{Mininet} and the \textbf{Ryu Controller}.
+        \item Developed a centralized log ingestion pipeline for virtual switches and routers, providing consistent visibility across the SDN environment.
+        \item \textbf{Outcome:} Improved traffic monitoring and enabled earlier detection of anomalous behavior across the SDN infrastructure.
+    \end{itemize}
+  \vspace{2pt}
+  \resumeProjectHeading
+    {Enterprise SOC Monitoring \& SOAR System}{10/2025 - 11/2025}
+    \begin{itemize}[leftmargin=0.15in, label=\textbullet]
+        \item Segmented the network with VLANs on \textbf{pfSense} and implemented \textbf{WPA2-Enterprise} authentication with FreeRADIUS.
+        \item Deployed \textbf{Suricata} in inline mode to detect and automatically block DDoS activity and Nmap scans.
+        \item Created \textbf{Wazuh SIEM} rules for centralized monitoring and detection of rogue DHCP and SSH brute-force activity.
+        \item Automated incident response with \textbf{n8n}, including risk scoring, Telegram alerts, and malicious IP blocking on the firewall.
+        \item Developed a real-time security monitoring dashboard with \textbf{ReactJS} and \textbf{Supabase}.
+        \item \textbf{Outcome:} Delivered a closed-loop SOC prototype that detected and blocked simulated attacks within seconds.
+    \end{itemize}
+\end{itemize}
+
+% Technical skills
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \item \textbf{Security Monitoring \& SOC Operations:} SIEM (Wazuh, KUMA), log analysis (Sysmon, Windows Event Logs, Syslog), IOC identification, and security alert configuration.
+    \item \textbf{Security Tools \& Automation:} Firewalls and routing (pfSense, iptables), IDS/IPS (Suricata), network authentication (FreeRADIUS), SOAR and integration (n8n), Docker, and Docker Compose.
+    \item \textbf{Systems \& Networking:} Windows Server (Active Directory, DNS, DHCP, GPO), basic Linux administration, OSI model, and TCP/IP fundamentals.
+    \item \textbf{Programming \& Databases:} C\#, Java, JavaScript, Python, and Supabase.
+\end{itemize}
+
+% Languages
+\section*{LANGUAGES}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \item \textbf{English:} Intermediate proficiency; comfortable reading technical documentation.
+\end{itemize}
+
+\end{document}

@@ -59,6 +59,7 @@ npm audit
 app/                    # App Router, metadata và CSS toàn cục
 src/components/         # Các section và component giao diện
 public/                 # Logo, CV và tài nguyên tĩnh
+cv/                     # Source LaTeX của CV tiếng Anh
 next.config.ts          # Cấu hình Next.js và security headers
 ```
 
@@ -93,10 +94,16 @@ next.config.ts          # Cấu hình Next.js và security headers
 ## Cập nhật CV
 
 - Giữ tên file production là `public/Nguyen_Van_Tien_Phat_Resume.pdf` để link trên website không bị đổi.
-- Nên lưu source LaTeX trong một thư mục riêng cùng các file `.cls`, `.sty`, hình ảnh và font liên quan.
+- Source tiếng Anh hiện tại nằm tại `cv/Nguyen_Van_Tien_Phat_Resume_EN.tex`; PDF sau khi biên dịch được chép vào `public/Nguyen_Van_Tien_Phat_Resume.pdf`.
 - Khi chuyển CV sang tiếng Anh, ưu tiên cách diễn đạt theo thành tích: động từ hành động, công nghệ đã dùng, phạm vi triển khai và kết quả đo được.
 - Sau khi biên dịch, kiểm tra lại PDF ở kích thước A4: không tràn dòng, không cắt chữ, bullet đồng đều và vẫn nằm gọn trong một trang nếu có thể.
 - Chạy lại `npm run lint` và `npm run build`, sau đó deploy lên Vercel.
+
+Biên dịch source bằng MiKTeX/TeX Live:
+
+```bash
+pdflatex -interaction=nonstopmode -halt-on-error cv/Nguyen_Van_Tien_Phat_Resume_EN.tex
+```
 
 ## Triển khai
 
