@@ -39,8 +39,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:mb-0 sm:pt-6">
-      <div className="flex items-center gap-1 sm:gap-2 bg-surface/50 border border-border backdrop-blur-xl py-1 px-1.5 rounded-full shadow-2xl">
+    <div className="fixed bottom-0 sm:bottom-auto sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:mb-0 sm:pt-6 pointer-events-none">
+      <div className="flex items-center gap-1 sm:gap-2 bg-surface/50 border border-border backdrop-blur-xl py-1 px-1.5 rounded-full shadow-2xl pointer-events-auto">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.name;
