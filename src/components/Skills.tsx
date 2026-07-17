@@ -60,7 +60,7 @@ export default function Skills() {
             <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
             
             <div className="relative z-10">
-              <div className="mb-6 p-3 bg-slate-50 dark:bg-black/30 rounded-xl w-fit border border-slate-200 dark:border-white/5 backdrop-blur-sm shadow-sm dark:shadow-inner group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-6 p-3 bg-control rounded-xl w-fit border border-control-border backdrop-blur-sm shadow-sm group-hover:scale-110 transition-transform duration-300">
                 {skill.icon}
               </div>
               <h3 className="text-2xl font-bold mb-3 text-text">{skill.title}</h3>
@@ -80,7 +80,7 @@ export default function Skills() {
           {techStack.map((tech, index) => (
             <span
               key={index}
-              className="px-4 py-2 bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/5 text-slate-600 dark:text-muted text-sm font-medium rounded-lg hover:bg-white hover:border-accent/50 hover:text-accent dark:hover:bg-black/40 dark:hover:text-accent hover:shadow-md hover:-translate-y-0.5 transition-all cursor-default backdrop-blur-md"
+              className="px-4 py-2 bg-control border border-control-border text-control-text text-sm font-medium rounded-lg hover:bg-control-hover hover:border-accent/50 hover:text-accent hover:shadow-md hover:-translate-y-0.5 transition-all cursor-default backdrop-blur-md"
             >
               {tech}
             </span>

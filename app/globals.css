@@ -10,6 +10,10 @@
   --color-muted: var(--theme-muted);
   --color-accent: var(--theme-accent);
   --color-accent-warm: var(--theme-accent-warm);
+  --color-control: var(--theme-control);
+  --color-control-border: var(--theme-control-border);
+  --color-control-text: var(--theme-control-text);
+  --color-control-hover: var(--theme-control-hover);
 }
 
 :root {
@@ -20,6 +24,10 @@
   --theme-muted: #71717a;
   --theme-accent: #059669;
   --theme-accent-warm: #16a34a;
+  --theme-control: #f8fafc;
+  --theme-control-border: #e2e8f0;
+  --theme-control-text: #475569;
+  --theme-control-hover: #ffffff;
 }
 
 .dark {
@@ -30,6 +38,10 @@
   --theme-muted: #888888;
   --theme-accent: #00ff66;
   --theme-accent-warm: #00cc55;
+  --theme-control: rgba(0, 0, 0, 0.4);
+  --theme-control-border: rgba(255, 255, 255, 0.05);
+  --theme-control-text: #888888;
+  --theme-control-hover: rgba(0, 0, 0, 0.4);
 }
 
 html {
