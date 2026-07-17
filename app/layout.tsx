@@ -13,8 +13,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Phát Nguyễn | Portfolio",
-  description: "Cybersecurity Student & SOC Intern",
+  metadataBase: new URL("https://tienphat.tech"),
+  title: "Nguyễn Văn Tiến Phát | Cybersecurity Portfolio",
+  description:
+    "Portfolio của Nguyễn Văn Tiến Phát — SOC Intern và sinh viên An toàn thông tin, tập trung vào SIEM, SOAR, Network Security và AI cho SDN.",
+  openGraph: {
+    title: "Nguyễn Văn Tiến Phát | Cybersecurity Portfolio",
+    description:
+      "SOC Intern tập trung vào SIEM, SOAR, Network Security và AI cho SDN.",
+    url: "/",
+    siteName: "Nguyễn Văn Tiến Phát",
+    locale: "vi_VN",
+    type: "website",
+  },
 };
 
 import { ThemeProvider } from "../src/components/ThemeProvider";

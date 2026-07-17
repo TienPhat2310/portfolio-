@@ -1,5 +1,5 @@
 "use client";
-import { Download, Terminal, Shield, ArrowRight } from "lucide-react";
+import { Terminal, Shield, ArrowRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import TiltCard from "./TiltCard";
 import DownloadButton from "./DownloadButton";
@@ -28,7 +28,10 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-[90vh] flex flex-col justify-center py-20 relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-[calc(100svh-6rem)] pt-12 pb-16 sm:pt-16 lg:pt-8 lg:pb-20 relative overflow-hidden"
+    >
       <motion.div 
         variants={containerVariants}
         initial="hidden"

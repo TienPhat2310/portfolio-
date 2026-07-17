@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { ExternalLink, Eye, Users } from "lucide-react";
 
 export default function Footer() {
@@ -43,9 +44,11 @@ export default function Footer() {
           {/* Column 1: University Info */}
           <div className="flex gap-4 items-start">
             <div className="w-14 h-14 shrink-0 bg-white rounded-lg flex items-center justify-center p-1 border border-border ">
-              <img 
+              <Image
                 src="/huflit-logo.png" 
                 alt="HUFLIT Logo" 
+                width={48}
+                height={48}
                 className="w-full h-full object-contain"
               />
             </div>

@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Download, Loader2, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
 
 interface DownloadButtonProps {
   className?: string;
@@ -29,8 +28,8 @@ export default function DownloadButton({ className = "", resumeUrl, fileName }: 
       setTimeout(() => setDownloaded(false), 3000);
     } catch (error) {
       console.error("Download failed:", error);
-      // Last-resort fallback (may be blocked by popup blocker on desktop)
-      window.open(resumeUrl, "_blank");
+      // Same-tab fallback avoids popup blockers on desktop browsers.
+      window.location.assign(resumeUrl);
     } finally {
       setIsDownloading(false);
     }

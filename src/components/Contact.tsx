@@ -26,7 +26,7 @@ export default function Contact() {
     e.preventDefault();
     const subject = encodeURIComponent(`Liên hệ từ Portfolio: ${formData.name}`);
     const body = encodeURIComponent(`Tên: ${formData.name}\nEmail: ${formData.email}\n\nNội dung:\n${formData.message}`);
-    window.open(`mailto:nguyenphat0976459403@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    window.location.href = `mailto:nguyenphat0976459403@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
