@@ -10,7 +10,7 @@ Portfolio cá nhân giới thiệu kinh nghiệm, kỹ năng và các dự án c
 - Kinh nghiệm với SIEM và phân tích log: Wazuh, Kaspersky KUMA.
 - Tự động hóa phản ứng sự cố bằng n8n (SOAR).
 - Network Security, SDN và ứng dụng Machine Learning trong phát hiện sự cố.
-- Danh sách dự án, thông tin liên hệ và CV tải trực tiếp qua endpoint có header tải xuống tương thích với trình duyệt desktop.
+- Danh sách dự án, thông tin liên hệ và CV có thể mở bằng trình xem PDF của trình duyệt hoặc tải trực tiếp qua endpoint `/download-cv`.
 - Giao diện responsive, dark/light theme và hiệu ứng chuyển động.
 
 ## Công nghệ
