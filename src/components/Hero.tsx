@@ -90,8 +90,7 @@ export default function Hero() {
               Liên hệ
             </motion.a>
             <DownloadButton
-              resumeUrl="/Nguyen_Van_Tien_Phat_Resume.pdf"
-              fileName="Nguyen_Van_Tien_Phat_Resume.pdf"
+              resumeUrl="/download-cv"
             />
           </motion.div>
         </div>
