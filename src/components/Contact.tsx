@@ -35,14 +35,14 @@ export default function Contact() {
         <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-border bg-surface/20 backdrop-blur-3xl text-accent text-sm tracking-widest mb-6">
           CONNECT
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold text-center">Liên hệ</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-center">Get In Touch</h2>
         <p className="text-muted mt-4 text-center max-w-lg">
-          Mình luôn sẵn sàng trao đổi về các cơ hội công việc, dự án hoặc chỉ đơn giản là thảo luận về Cybersecurity. Đừng ngần ngại liên hệ nhé!
+          I am always open to discussing new career opportunities, security projects, or simply chatting about Cybersecurity. Feel free to reach out!
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
-        {/* CỘT TRÁI - Contact Info */}
+        {/* LEFT COL - Contact Info */}
         <div className="lg:col-span-2 flex flex-col gap-4">
           <a
             href="https://www.facebook.com/tien.phat.516688"
@@ -97,16 +97,16 @@ export default function Contact() {
           </a>
         </div>
 
-        {/* CỘT PHẢI - Form */}
+        {/* RIGHT COL - Form */}
         <div className="lg:col-span-3 bg-surface/40 backdrop-blur-3xl p-8 rounded-3xl border border-white/5 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-accent/10 transition-colors duration-500"></div>
           
-          <h3 className="text-xl font-bold text-text mb-6 relative z-10">Gửi tin nhắn</h3>
+          <h3 className="text-xl font-bold text-text mb-6 relative z-10">Send a Message</h3>
           
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-xs text-muted font-[family-name:var(--font-mono)] tracking-wider">HỌ TÊN</label>
+                <label htmlFor="name" className="text-xs text-muted font-[family-name:var(--font-mono)] tracking-wider">FULL NAME</label>
                 <input
                   type="text"
                   id="name"
@@ -115,7 +115,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   className="bg-surface/50 dark:bg-black/30 border border-border dark:border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors backdrop-blur-md"
-                  placeholder="Nguyễn Văn A"
+                  placeholder="John Doe"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -134,7 +134,7 @@ export default function Contact() {
             </div>
             
             <div className="flex flex-col gap-2 mt-2">
-              <label htmlFor="message" className="text-xs text-muted font-[family-name:var(--font-mono)] tracking-wider">NỘI DUNG</label>
+              <label htmlFor="message" className="text-xs text-muted font-[family-name:var(--font-mono)] tracking-wider">MESSAGE</label>
               <textarea
                 id="message"
                 name="message"
@@ -143,7 +143,7 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 className="bg-surface/50 dark:bg-black/30 border border-border dark:border-white/10 rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors resize-none backdrop-blur-md"
-                placeholder="Bạn muốn trao đổi về..."
+                placeholder="How can I help you..."
               />
             </div>
             
@@ -151,7 +151,7 @@ export default function Contact() {
               type="submit"
               className="mt-4 bg-accent text-bg font-bold py-3 px-6 rounded-xl hover:opacity-90 transition-all font-[family-name:var(--font-mono)] text-sm shadow-[0_0_20px_rgba(41,151,255,0.2)] hover:shadow-[0_0_30px_rgba(41,151,255,0.4)] hover:-translate-y-0.5"
             >
-              GỬI TIN NHẮN
+              SEND MESSAGE
             </button>
           </form>
         </div>

@@ -4,24 +4,24 @@ import TiltCard from "./TiltCard";
 
 const skillsData = [
   {
-    title: "SIEM & Phân tích Log",
-    description: "Triển khai, cấu hình và giám sát trên nền tảng Wazuh và KUMA. Xây dựng rules để phát hiện bất thường.",
+    title: "SIEM & Log Analysis",
+    description: "Deploy, configure, and monitor security events on Wazuh and KUMA SIEM platforms.",
     icon: <Search className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />,
     className: "md:col-span-2",
     gradient: "from-emerald-500/10 to-transparent",
     borderGlow: "hover:border-emerald-500/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]",
   },
   {
-    title: "Tự động hóa SOAR",
-    description: "Xây dựng luồng phản ứng sự cố (Incident Response) tự động bằng n8n kết nối API các hệ thống.",
+    title: "SOAR Automation",
+    description: "Build automated Incident Response workflows using n8n and REST API integrations.",
     icon: <Zap className="w-8 h-8 text-yellow-600 dark:text-yellow-400" />,
     className: "md:col-span-1",
     gradient: "from-yellow-500/10 to-transparent",
     borderGlow: "hover:border-yellow-500/50 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)]",
   },
   {
-    title: "AI trong Bảo mật",
-    description: "Nghiên cứu ứng dụng Machine Learning phân loại lỗi mạng SDN, phát hiện tấn công DDoS.",
+    title: "AI in Security",
+    description: "Research machine learning applications for SDN log anomaly detection and fault classification.",
     icon: <BrainCircuit className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
     className: "md:col-span-1",
     gradient: "from-purple-500/10 to-transparent",
@@ -29,7 +29,7 @@ const skillsData = [
   },
   {
     title: "Network Security",
-    description: "Kiến trúc SDN, cấu hình firewall, giám sát network traffic và packet analysis.",
+    description: "SDN architecture, firewall configuration, network traffic monitoring, and packet analysis.",
     icon: <Globe className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
     className: "md:col-span-2",
     gradient: "from-blue-500/10 to-transparent",
@@ -48,7 +48,7 @@ export default function Skills() {
         <p className="font-[family-name:var(--font-mono)] px-4 py-1.5 rounded-full border border-border bg-surface/20 backdrop-blur-3xl text-accent text-sm tracking-widest mb-6">
           EXPERTISE
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold text-center">Kỹ năng chuyên môn</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-center">Technical Skills</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

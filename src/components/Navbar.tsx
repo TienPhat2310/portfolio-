@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Home, User, Code2, Briefcase, Mail } from "lucide-react";
+import { Home, User, Code2, Briefcase, BookOpen, Mail } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
@@ -10,6 +10,7 @@ const navItems = [
   { name: "About", url: "#about", icon: User },
   { name: "Skills", url: "#skills", icon: Code2 },
   { name: "Projects", url: "#projects", icon: Briefcase },
+  { name: "Research", url: "#research", icon: BookOpen },
   { name: "Contact", url: "#contact", icon: Mail },
 ];
 

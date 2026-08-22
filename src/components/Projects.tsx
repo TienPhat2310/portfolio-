@@ -24,7 +24,7 @@ export default function Projects() {
           PROJECTS
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-center">Featured Work</h2>
-        <p className="text-muted mt-4 text-center">Một số dự án tiêu biểu trong quá trình học tập và làm việc</p>
+        <p className="text-muted mt-4 text-center">A collection of featured projects built during my studies and practical experience</p>
       </div>
 
       {/* Featured SOC Monitoring Project - Full Width */}
@@ -45,7 +45,7 @@ export default function Projects() {
                 SOC Monitoring &amp; Security Automation
               </h3>
               <p className="text-muted text-sm leading-relaxed mb-4">
-                Xây dựng môi trường SOC thực hành để giám sát sự kiện mạng, tập trung log, phát hiện mối đe dọa và tự động hóa cảnh báo sự cố với pfSense, Suricata, Wazuh SIEM và n8n.
+                Built a practical SOC laboratory environment to monitor network events, centralize logs, detect threats, and automate incident alerts using pfSense, Suricata, Wazuh SIEM, and n8n.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-muted bg-slate-100 dark:bg-black/30 border border-slate-200 dark:border-white/5 rounded-md backdrop-blur-md">pfSense</span>
@@ -119,35 +119,35 @@ export default function Projects() {
                   <span className="text-emerald-400 font-mono text-sm mt-0.5 font-bold">01</span>
                   <div>
                     <strong className="text-text text-sm block mb-1">VLAN Segmentation</strong>
-                    <span className="text-muted text-sm">Phân chia vùng mạng giám sát riêng biệt và định tuyến lưu lượng giữa các VLAN.</span>
+                    <span className="text-muted text-sm">Segmented monitored network zones and routed traffic between isolated VLANs.</span>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="text-emerald-400 font-mono text-sm mt-0.5 font-bold">02</span>
                   <div>
                     <strong className="text-text text-sm block mb-1">pfSense Firewall Rules</strong>
-                    <span className="text-muted text-sm">Cấu hình luật kiểm soát lưu lượng Ingress, Egress và luồng dữ liệu nội bộ giữa các subnets.</span>
+                    <span className="text-muted text-sm">Configured rules controlling Ingress, Egress, and inter-subnet internal traffic flows.</span>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="text-emerald-400 font-mono text-sm mt-0.5 font-bold">03</span>
                   <div>
                     <strong className="text-text text-sm block mb-1">Suricata IDS Alerts</strong>
-                    <span className="text-muted text-sm">Bắt gói tin và phát hiện các dấu hiệu tấn công mạng theo luật Signature-based telemetry.</span>
+                    <span className="text-muted text-sm">Captured network packets and generated signature-based threat detection telemetry.</span>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="text-emerald-400 font-mono text-sm mt-0.5 font-bold">04</span>
                   <div>
                     <strong className="text-text text-sm block mb-1">Wazuh Centralized Logs</strong>
-                    <span className="text-muted text-sm">Thu thập, tập trung log từ host agent và thiết bị mạng, thực hiện tương quan sự kiện (Log Correlation).</span>
+                    <span className="text-muted text-sm">Collected and centralized logs from host agents and network devices for log correlation.</span>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="text-emerald-400 font-mono text-sm mt-0.5 font-bold">05</span>
                   <div>
                     <strong className="text-text text-sm block mb-1">n8n Alert Workflow</strong>
-                    <span className="text-muted text-sm">Tự động hóa luồng gửi cảnh báo tức thời qua Telegram và kích hoạt kịch bản ứng phó sự cố.</span>
+                    <span className="text-muted text-sm">Automated real-time Telegram alert notifications and incident response playbooks.</span>
                   </div>
                 </li>
               </ul>
@@ -306,29 +306,29 @@ export default function Projects() {
                 <li className="flex gap-4 items-start">
                   <span className="text-accent font-mono text-sm mt-0.5 font-bold">01</span>
                   <div>
-                    <strong className="text-text text-sm block mb-1">Mô phỏng mạng SDN</strong>
-                    <span className="text-muted text-sm">Thiết kế Topology Tree (depth=3, fanout=2) trên Mininet, kết nối POX Controller, thiết lập giả lập môi trường mạng phức tạp.</span>
+                    <strong className="text-text text-sm block mb-1">SDN Network Simulation</strong>
+                    <span className="text-muted text-sm">Designed a Tree Topology (depth=3, fanout=2) on Mininet connected to POX Controller, simulating complex network traffic environments.</span>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="text-accent font-mono text-sm mt-0.5 font-bold">02</span>
                   <div>
-                    <strong className="text-text text-sm block mb-1">Kịch bản lỗi (Fault Injection)</strong>
-                    <span className="text-muted text-sm">Xây dựng kịch bản giả lập 7 tình huống: DDoS, Lỗi phần cứng, Rớt kết nối Controller, Tràn bảng Flow, Đứt liên kết...</span>
+                    <strong className="text-text text-sm block mb-1">Fault Injection Scenarios</strong>
+                    <span className="text-muted text-sm">Constructed automated injection scripts simulating 7 failure scenarios: DDoS, hardware failure, controller disconnect, flow table overflow, link failure...</span>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="text-accent font-mono text-sm mt-0.5 font-bold">03</span>
                   <div>
-                    <strong className="text-text text-sm block mb-1">Chuẩn hóa & Tiền xử lý Log</strong>
-                    <span className="text-muted text-sm">Phát triển script lọc nhiễu, chống spam log, trích xuất đặc trưng mạng từ Open vSwitch thô sang định dạng chuẩn mực (Data Cleaning).</span>
+                    <strong className="text-text text-sm block mb-1">Log Normalization &amp; Cleaning</strong>
+                    <span className="text-muted text-sm">Developed scripts for noise filtering, log anti-spamming, and network feature extraction from raw Open vSwitch logs to standardized formats.</span>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="text-accent font-mono text-sm mt-0.5 font-bold">04</span>
                   <div>
-                    <strong className="text-text text-sm block mb-1">Xuất bản Dataset</strong>
-                    <span className="text-muted text-sm">Hoàn thiện bộ dữ liệu chuẩn mực gần 300,000 dòng (Multi-class và Binary CSV/JSON) phục vụ trực tiếp cho việc huấn luyện mô hình AI học sâu (TCN).</span>
+                    <strong className="text-text text-sm block mb-1">Dataset Publication</strong>
+                    <span className="text-muted text-sm">Produced standardized datasets of ~300,000 samples (Multi-class and Binary CSV/JSON) for deep learning (TCN) model training.</span>
                   </div>
                 </li>
               </ul>

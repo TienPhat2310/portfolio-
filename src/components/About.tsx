@@ -15,14 +15,14 @@ export default function About() {
           </h2>
           <div className="space-y-6 text-muted text-base md:text-lg leading-relaxed bg-white/50 dark:bg-surface/30 backdrop-blur-3xl border border-border rounded-3xl p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none">
             <p>
-              Chào bạn, mình là <span className="text-text font-bold">Nguyễn Văn Tiến Phát</span>. 
-              Sinh viên năm cuối ngành An toàn thông tin tại HUFLIT, hiện đang là <span className="text-accent-warm font-bold">SOC Intern</span>.
+              Hi there, I am <span className="text-text font-bold">Nguyen Van Tien Phat</span>, 
+              a senior Cybersecurity student at HUFLIT, currently working as a <span className="text-accent-warm font-bold">SOC Intern</span>.
             </p>
             <p>
-              Đam mê lớn nhất của mình là phân tích log, phát hiện các mối đe dọa (Threat Detection) và tối ưu hóa quy trình phản ứng sự cố (Incident Response). Mình có kinh nghiệm triển khai và vận hành các nền tảng SIEM như <strong className="text-text">Wazuh</strong>, <strong className="text-text">KUMA</strong> và xây dựng các playbook tự động hóa bằng <strong className="text-text">n8n</strong>.
+              My primary passion lies in log analysis, threat detection, and incident response automation (SOAR). I have hands-on experience deploying and operating SIEM platforms like <strong className="text-text">Wazuh</strong> and <strong className="text-text">KUMA</strong>, as well as building automated playbooks using <strong className="text-text">n8n</strong>.
             </p>
             <p>
-              Hiện tại, mình đang tập trung hoàn thành đồ án tốt nghiệp với đề tài <span className="text-accent italic font-medium">&quot;Phân loại lỗi mạng SDN bằng AI&quot;</span> — một sự kết hợp thú vị giữa bảo mật mạng Software-Defined Networking và Machine Learning.
+              Currently, I am focusing on my graduation thesis on <span className="text-accent italic font-medium">&quot;Data Engineering & Log Anomaly Detection in SDN Networks&quot;</span> — an exciting intersection of Software-Defined Networking and Artificial Intelligence.
             </p>
           </div>
         </div>

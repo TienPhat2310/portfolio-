@@ -65,8 +65,8 @@ export default function Hero() {
             variants={itemVariants} 
             className="mt-6 max-w-xl text-muted text-lg leading-relaxed"
           >
-            Thực hành SIEM (Wazuh, KUMA), tự động hoá phản ứng sự cố với n8n, 
-            và đang hoàn thiện đồ án tốt nghiệp về phân loại lỗi mạng SDN bằng AI.
+            Hands-on SIEM monitoring (Wazuh, KUMA), incident response automation with n8n, 
+            and data engineering for SDN log anomaly detection.
           </motion.p>
           
           <motion.div 
@@ -79,7 +79,7 @@ export default function Hero() {
               href="#projects"
               className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white dark:text-black hover:opacity-90 transition-all shadow-lg shadow-accent/20 flex items-center gap-2"
             >
-              Xem Projects <ArrowRight className="w-4 h-4" />
+              View Projects <ArrowRight className="w-4 h-4" />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -87,7 +87,7 @@ export default function Hero() {
               href="#contact"
               className="rounded-full border border-border bg-surface/40 backdrop-blur-3xl px-6 py-3 text-sm font-semibold hover:border-white/20 hover:shadow-lg transition-all flex items-center gap-2"
             >
-              Liên hệ
+              Contact Me
             </motion.a>
             <DownloadButton
               resumeUrl="/Nguyen_Van_Tien_Phat_Resume.pdf"
@@ -114,7 +114,7 @@ export default function Hero() {
               </div>
             </div>
             <p className="text-sm text-muted">
-              Đam mê giám sát an toàn thông tin, phân tích log và tự động hoá quy trình (SOAR).
+              Passionate about information security monitoring, log analysis, and incident response automation (SOAR).
             </p>
           </TiltCard>
 
