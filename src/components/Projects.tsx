@@ -48,54 +48,64 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <TiltCard
-            key={index}
-            glareColor={project.glareColor}
-            onClick={() => project.link && window.open(project.link, "_blank")}
-            className={`group flex flex-col rounded-3xl border border-border bg-white dark:bg-surface/40 backdrop-blur-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${project.borderGlow} overflow-hidden ${project.link ? 'cursor-pointer' : ''} shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none`}
-          >
-            {/* Image Placeholder with Gradient */}
-            <div className={`h-48 w-full bg-gradient-to-br ${project.gradient} relative overflow-hidden border-b border-border/50`}>
-              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-              {project.link && (
-                <div className="absolute top-4 right-4 bg-white/80 dark:bg-black/40 backdrop-blur-xl p-2 rounded-full border border-border dark:border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <ArrowUpRight className="w-5 h-5 text-text" />
-                </div>
-              )}
-            </div>
+        {projects.map((project, index) => {
+          const card = (
+            <TiltCard
+              glareColor={project.glareColor}
+              className={`group h-full flex flex-col rounded-3xl border border-border bg-white dark:bg-surface/40 backdrop-blur-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${project.borderGlow} overflow-hidden ${project.link ? 'cursor-pointer' : ''} shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none`}
+            >
+              {/* Image Placeholder with Gradient */}
+              <div className={`h-48 w-full bg-gradient-to-br ${project.gradient} relative overflow-hidden border-b border-border/50`}>
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+                {project.link && (
+                  <div className="absolute top-4 right-4 bg-white/80 dark:bg-black/40 backdrop-blur-xl p-2 rounded-full border border-border dark:border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <ArrowUpRight className="w-5 h-5 text-text" />
+                  </div>
+                )}
+              </div>
 
-            <div className="p-6 flex flex-col flex-1">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-xs font-bold tracking-widest text-muted font-[family-name:var(--font-mono)]">
-                  {project.category}
-                </span>
-                <span className="text-xs font-bold tracking-widest text-muted font-[family-name:var(--font-mono)]">
-                  PRIVATE
-                </span>
-              </div>
-              
-              <h3 className={`text-xl font-bold mb-3 text-text ${project.textHover} transition-colors duration-300`}>
-                {project.title}
-              </h3>
-              
-              <p className="text-muted text-sm leading-relaxed mb-6 flex-1">
-                {project.description}
-              </p>
-              
-              <div className="flex flex-wrap gap-2 mt-auto pt-4">
-                {project.tags.map((tag, tagIndex) => (
-                  <span
-                    key={tagIndex}
-                    className="px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-muted bg-slate-100 dark:bg-black/30 border border-slate-200 dark:border-white/5 rounded-md backdrop-blur-md"
-                  >
-                    {tag}
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-bold tracking-widest text-muted font-[family-name:var(--font-mono)]">
+                    {project.category}
                   </span>
-                ))}
+                  <span className="text-xs font-bold tracking-widest text-muted font-[family-name:var(--font-mono)]">
+                    PRIVATE
+                  </span>
+                </div>
+                
+                <h3 className={`text-xl font-bold mb-3 text-text ${project.textHover} transition-colors duration-300`}>
+                  {project.title}
+                </h3>
+                
+                <p className="text-muted text-sm leading-relaxed mb-6 flex-1">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mt-auto pt-4">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-muted bg-slate-100 dark:bg-black/30 border border-slate-200 dark:border-white/5 rounded-md backdrop-blur-md"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
+            </TiltCard>
+          );
+
+          return project.link ? (
+            <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="block h-full outline-none">
+              {card}
+            </a>
+          ) : (
+            <div key={index} className="block h-full">
+              {card}
             </div>
-          </TiltCard>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
