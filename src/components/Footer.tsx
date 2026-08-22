@@ -19,7 +19,7 @@ export default function Footer() {
           return data.count + offset;
         }
         throw new Error("Invalid format");
-      } catch (err) {
+      } catch {
         return fallback;
       }
     };

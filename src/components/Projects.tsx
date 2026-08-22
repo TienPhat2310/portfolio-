@@ -4,14 +4,15 @@ import TiltCard from "./TiltCard";
 
 const projects = [
   {
-    title: "Enterprise SOC Integration — pfSense + Suricata + Wazuh + n8n",
-    description: "Đồ án cuối kỳ: Thiết kế và triển khai hệ thống giám sát an toàn thông tin doanh nghiệp, tích hợp tường lửa pfSense, IDS/IPS Suricata, Wazuh SIEM và tự động hoá quy trình phản ứng sự cố (SOAR) qua n8n cảnh báo Telegram.",
+    title: "SOC Monitoring & Security Automation",
+    description: "Xây dựng môi trường SOC thực hành để giám sát sự kiện mạng, tập trung log, phát hiện mối đe dọa và tự động hóa cảnh báo sự cố với pfSense, Suricata, Wazuh SIEM và n8n.",
     tags: ["pfSense", "Suricata", "Wazuh SIEM", "n8n SOAR"],
     category: "SYSTEM & SECURITY",
     gradient: "from-emerald-500/20 to-teal-900/40",
     borderGlow: "hover:border-emerald-500/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]",
     textHover: "group-hover:text-emerald-400",
     glareColor: "color-mix(in srgb, #10b981 15%, transparent)",
+    link: "https://youtu.be/oZpSPreHq7I?si=KCANn2dBY9n0ZtlD",
   },
   {
     title: "Kaspersky KUMA SIEM & SOAR Integration",
@@ -51,14 +52,17 @@ export default function Projects() {
           <TiltCard
             key={index}
             glareColor={project.glareColor}
-            className={`group flex flex-col rounded-3xl border border-border bg-white dark:bg-surface/40 backdrop-blur-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${project.borderGlow} overflow-hidden cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none`}
+            onClick={() => project.link && window.open(project.link, "_blank")}
+            className={`group flex flex-col rounded-3xl border border-border bg-white dark:bg-surface/40 backdrop-blur-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${project.borderGlow} overflow-hidden ${project.link ? 'cursor-pointer' : ''} shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none`}
           >
             {/* Image Placeholder with Gradient */}
             <div className={`h-48 w-full bg-gradient-to-br ${project.gradient} relative overflow-hidden border-b border-border/50`}>
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-              <div className="absolute top-4 right-4 bg-white/80 dark:bg-black/40 backdrop-blur-xl p-2 rounded-full border border-border dark:border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                <ArrowUpRight className="w-5 h-5 text-text" />
-              </div>
+              {project.link && (
+                <div className="absolute top-4 right-4 bg-white/80 dark:bg-black/40 backdrop-blur-xl p-2 rounded-full border border-border dark:border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <ArrowUpRight className="w-5 h-5 text-text" />
+                </div>
+              )}
             </div>
 
             <div className="p-6 flex flex-col flex-1">
