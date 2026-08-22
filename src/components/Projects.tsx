@@ -4,17 +4,6 @@ import TiltCard from "./TiltCard";
 
 const projects = [
   {
-    title: "SOC Monitoring & Security Automation",
-    description: "Xây dựng môi trường SOC thực hành để giám sát sự kiện mạng, tập trung log, phát hiện mối đe dọa và tự động hóa cảnh báo sự cố với pfSense, Suricata, Wazuh SIEM và n8n.",
-    tags: ["pfSense", "Suricata", "Wazuh SIEM", "n8n SOAR"],
-    category: "SYSTEM & SECURITY",
-    gradient: "from-emerald-500/20 to-teal-900/40",
-    borderGlow: "hover:border-emerald-500/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]",
-    textHover: "group-hover:text-emerald-400",
-    glareColor: "color-mix(in srgb, #10b981 15%, transparent)",
-    link: "https://youtu.be/oZpSPreHq7I?si=KCANn2dBY9n0ZtlD",
-  },
-  {
     title: "Kaspersky KUMA SIEM & SOAR Integration",
     description: "Kinh nghiệm thực tế (SOC Intern): Triển khai hệ thống SIEM doanh nghiệp (Kaspersky KUMA), cấu hình agent thu thập log Web Server, xây dựng 5 quy tắc tương quan phát hiện tấn công (SQLi, Web Shell) và tích hợp luồng tự động phản ứng (n8n) & nền tảng điều tra DFIR-IRIS theo tiêu chuẩn NIST SP 800-61r2.",
     tags: ["KUMA SIEM", "n8n SOAR", "DFIR-IRIS", "NIST"],
@@ -23,6 +12,7 @@ const projects = [
     borderGlow: "hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
     textHover: "group-hover:text-blue-400",
     glareColor: "color-mix(in srgb, #3b82f6 15%, transparent)",
+    link: undefined as string | undefined,
   },
 ];
 
@@ -37,7 +27,142 @@ export default function Projects() {
         <p className="text-muted mt-4 text-center">Một số dự án tiêu biểu trong quá trình học tập và làm việc</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {/* Featured SOC Monitoring Project - Full Width */}
+      <div className="relative overflow-hidden style-3d flex flex-col rounded-3xl border border-border bg-white dark:bg-surface/40 backdrop-blur-3xl transition-all duration-500 shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-none mb-12 w-full">
+        <div className="p-8 md:p-10 flex flex-col gap-8 relative z-10">
+          {/* Header */}
+          <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center border-b border-border/50 pb-8">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-xs font-bold tracking-widest text-emerald-400 font-[family-name:var(--font-mono)]">
+                  PROJECT 01 // SYSTEM &amp; SECURITY
+                </span>
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Built / In Progress
+                </span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 text-text">
+                SOC Monitoring &amp; Security Automation
+              </h3>
+              <p className="text-muted text-sm leading-relaxed mb-4">
+                Xây dựng môi trường SOC thực hành để giám sát sự kiện mạng, tập trung log, phát hiện mối đe dọa và tự động hóa cảnh báo sự cố với pfSense, Suricata, Wazuh SIEM và n8n.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-muted bg-slate-100 dark:bg-black/30 border border-slate-200 dark:border-white/5 rounded-md backdrop-blur-md">pfSense</span>
+                <span className="px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-muted bg-slate-100 dark:bg-black/30 border border-slate-200 dark:border-white/5 rounded-md backdrop-blur-md">Suricata</span>
+                <span className="px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-muted bg-slate-100 dark:bg-black/30 border border-slate-200 dark:border-white/5 rounded-md backdrop-blur-md">Wazuh SIEM</span>
+                <span className="px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-muted bg-slate-100 dark:bg-black/30 border border-slate-200 dark:border-white/5 rounded-md backdrop-blur-md">n8n SOAR</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Pipeline Architecture */}
+          <div className="bg-black/5 dark:bg-black/40 rounded-2xl p-6 border border-border/50">
+            <div className="flex justify-between items-center mb-6">
+              <div className="text-xs font-bold tracking-widest text-emerald-400 font-[family-name:var(--font-mono)]">
+                ARCHITECTURE
+              </div>
+              <div className="text-xs text-muted font-[family-name:var(--font-mono)] hidden sm:block">
+                Detection and response pipeline
+              </div>
+            </div>
+            
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/10 cursor-pointer hover:-translate-y-0.5">
+                <span className="text-[10px] uppercase text-muted tracking-widest mb-1 font-[family-name:var(--font-mono)]">INGRESS</span>
+                <strong className="text-text text-sm">Internet</strong>
+              </div>
+              <ArrowRight className="w-5 h-5 text-muted hidden lg:block flex-shrink-0" />
+              <ArrowRight className="w-5 h-5 text-muted block lg:hidden rotate-90 flex-shrink-0" />
+
+              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/10 cursor-pointer hover:-translate-y-0.5">
+                <span className="text-[10px] uppercase text-muted tracking-widest mb-1 font-[family-name:var(--font-mono)]">FIREWALL</span>
+                <strong className="text-text text-sm">pfSense</strong>
+              </div>
+              <ArrowRight className="w-5 h-5 text-muted hidden lg:block flex-shrink-0" />
+              <ArrowRight className="w-5 h-5 text-muted block lg:hidden rotate-90 flex-shrink-0" />
+
+              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/10 cursor-pointer hover:-translate-y-0.5">
+                <span className="text-[10px] uppercase text-muted tracking-widest mb-1 font-[family-name:var(--font-mono)]">IDS</span>
+                <strong className="text-text text-sm">Suricata</strong>
+              </div>
+              <ArrowRight className="w-5 h-5 text-muted hidden lg:block flex-shrink-0" />
+              <ArrowRight className="w-5 h-5 text-muted block lg:hidden rotate-90 flex-shrink-0" />
+
+              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/10 cursor-pointer hover:-translate-y-0.5">
+                <span className="text-[10px] uppercase text-muted tracking-widest mb-1 font-[family-name:var(--font-mono)]">SIEM</span>
+                <strong className="text-text text-sm">Wazuh</strong>
+              </div>
+              <ArrowRight className="w-5 h-5 text-muted hidden lg:block flex-shrink-0" />
+              <ArrowRight className="w-5 h-5 text-muted block lg:hidden rotate-90 flex-shrink-0" />
+
+              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/10 cursor-pointer hover:-translate-y-0.5">
+                <span className="text-[10px] uppercase text-muted tracking-widest mb-1 font-[family-name:var(--font-mono)]">SOAR</span>
+                <strong className="text-text text-sm">n8n</strong>
+              </div>
+              <ArrowRight className="w-5 h-5 text-muted hidden lg:block flex-shrink-0" />
+              <ArrowRight className="w-5 h-5 text-muted block lg:hidden rotate-90 flex-shrink-0" />
+
+              <div className="flex flex-col items-center lg:items-start p-4 border border-emerald-500/40 bg-emerald-500/10 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-emerald-400 hover:bg-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/20 cursor-pointer hover:-translate-y-0.5">
+                <span className="text-[10px] uppercase text-emerald-400 tracking-widest mb-1 font-[family-name:var(--font-mono)]">ACTION</span>
+                <strong className="text-text text-sm">Response</strong>
+              </div>
+            </div>
+          </div>
+
+          {/* Project Proof */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-4">
+            <div className="lg:col-span-2">
+              <h4 className="text-xs font-bold tracking-widest text-muted font-[family-name:var(--font-mono)] mb-6">WHAT I BUILT</h4>
+              <ul className="space-y-6">
+                <li className="flex gap-4 items-start">
+                  <span className="text-emerald-400 font-mono text-sm mt-0.5 font-bold">01</span>
+                  <div>
+                    <strong className="text-text text-sm block mb-1">VLAN Segmentation</strong>
+                    <span className="text-muted text-sm">Phân chia vùng mạng giám sát riêng biệt và định tuyến lưu lượng giữa các VLAN.</span>
+                  </div>
+                </li>
+                <li className="flex gap-4 items-start">
+                  <span className="text-emerald-400 font-mono text-sm mt-0.5 font-bold">02</span>
+                  <div>
+                    <strong className="text-text text-sm block mb-1">pfSense Firewall Rules</strong>
+                    <span className="text-muted text-sm">Cấu hình luật kiểm soát lưu lượng Ingress, Egress và luồng dữ liệu nội bộ giữa các subnets.</span>
+                  </div>
+                </li>
+                <li className="flex gap-4 items-start">
+                  <span className="text-emerald-400 font-mono text-sm mt-0.5 font-bold">03</span>
+                  <div>
+                    <strong className="text-text text-sm block mb-1">Suricata IDS Alerts</strong>
+                    <span className="text-muted text-sm">Bắt gói tin và phát hiện các dấu hiệu tấn công mạng theo luật Signature-based telemetry.</span>
+                  </div>
+                </li>
+                <li className="flex gap-4 items-start">
+                  <span className="text-emerald-400 font-mono text-sm mt-0.5 font-bold">04</span>
+                  <div>
+                    <strong className="text-text text-sm block mb-1">Wazuh Centralized Logs</strong>
+                    <span className="text-muted text-sm">Thu thập, tập trung log từ host agent và thiết bị mạng, thực hiện tương quan sự kiện (Log Correlation).</span>
+                  </div>
+                </li>
+                <li className="flex gap-4 items-start">
+                  <span className="text-emerald-400 font-mono text-sm mt-0.5 font-bold">05</span>
+                  <div>
+                    <strong className="text-text text-sm block mb-1">n8n Alert Workflow</strong>
+                    <span className="text-muted text-sm">Tự động hóa luồng gửi cảnh báo tức thời qua Telegram và kích hoạt kịch bản ứng phó sự cố.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-xs font-bold tracking-widest text-muted font-[family-name:var(--font-mono)] mb-6">DEMO</h4>
+              <a href="https://youtu.be/oZpSPreHq7I?si=KCANn2dBY9n0ZtlD" target="_blank" rel="noopener noreferrer" className="w-full inline-flex justify-center items-center gap-2 rounded-xl border border-border bg-surface/50 hover:bg-surface/80 backdrop-blur-3xl px-6 py-4 text-sm font-semibold hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/10 transition-all text-text group">
+                  Watch Project Demo <ArrowUpRight className="w-4 h-4 text-muted group-hover:text-emerald-400 transition-colors"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto mb-12">
         {projects.map((project, index) => {
           const card = (
             <TiltCard
@@ -138,35 +263,35 @@ export default function Projects() {
             </div>
             
             <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left">
+              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-accent/60 hover:bg-accent/10 hover:shadow-lg hover:shadow-accent/10 cursor-pointer hover:-translate-y-0.5">
                 <span className="text-[10px] uppercase text-muted tracking-widest mb-1 font-[family-name:var(--font-mono)]">INFRASTRUCTURE</span>
-                <strong className="text-text text-sm">Mininet & POX</strong>
+                <strong className="text-text text-sm">Mininet &amp; POX</strong>
               </div>
               <ArrowRight className="w-5 h-5 text-muted hidden lg:block flex-shrink-0" />
               <ArrowRight className="w-5 h-5 text-muted block lg:hidden rotate-90 flex-shrink-0" />
 
-              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left">
+              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-accent/60 hover:bg-accent/10 hover:shadow-lg hover:shadow-accent/10 cursor-pointer hover:-translate-y-0.5">
                 <span className="text-[10px] uppercase text-muted tracking-widest mb-1 font-[family-name:var(--font-mono)]">NETWORK NODE</span>
                 <strong className="text-text text-sm">Open vSwitch</strong>
               </div>
               <ArrowRight className="w-5 h-5 text-muted hidden lg:block flex-shrink-0" />
               <ArrowRight className="w-5 h-5 text-muted block lg:hidden rotate-90 flex-shrink-0" />
 
-              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left">
+              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-accent/60 hover:bg-accent/10 hover:shadow-lg hover:shadow-accent/10 cursor-pointer hover:-translate-y-0.5">
                 <span className="text-[10px] uppercase text-muted tracking-widest mb-1 font-[family-name:var(--font-mono)]">COLLECTION</span>
                 <strong className="text-text text-sm">sdn_collector</strong>
               </div>
               <ArrowRight className="w-5 h-5 text-muted hidden lg:block flex-shrink-0" />
               <ArrowRight className="w-5 h-5 text-muted block lg:hidden rotate-90 flex-shrink-0" />
 
-              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left">
+              <div className="flex flex-col items-center lg:items-start p-4 bg-surface/50 border border-border/50 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-accent/60 hover:bg-accent/10 hover:shadow-lg hover:shadow-accent/10 cursor-pointer hover:-translate-y-0.5">
                 <span className="text-[10px] uppercase text-muted tracking-widest mb-1 font-[family-name:var(--font-mono)]">PREPROCESSING</span>
                 <strong className="text-text text-sm">Log Normalization</strong>
               </div>
               <ArrowRight className="w-5 h-5 text-muted hidden lg:block flex-shrink-0" />
               <ArrowRight className="w-5 h-5 text-muted block lg:hidden rotate-90 flex-shrink-0" />
 
-              <div className="flex flex-col items-center lg:items-start p-4 border border-accent/30 bg-accent/10 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left">
+              <div className="flex flex-col items-center lg:items-start p-4 border border-accent/40 bg-accent/10 rounded-xl w-full lg:w-auto flex-1 text-center lg:text-left transition-all duration-300 hover:border-accent hover:bg-accent/20 hover:shadow-lg hover:shadow-accent/20 cursor-pointer hover:-translate-y-0.5">
                 <span className="text-[10px] uppercase text-accent tracking-widest mb-1 font-[family-name:var(--font-mono)]">OUTPUT</span>
                 <strong className="text-text text-sm">SDN Datasets</strong>
               </div>
