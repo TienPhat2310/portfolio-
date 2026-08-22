@@ -26,13 +26,14 @@ const projects = [
   },
   {
     title: "SDN Network Fault Detection — ML & Data Engineering",
-    description: "Khóa luận tốt nghiệp: Xây dựng hệ thống thu thập và chuẩn hóa log mạng SDN doanh nghiệp, phân loại tự động 7 kịch bản lỗi (DDoS, Lỗi phần cứng, Môi trường...) bằng Machine Learning (Random Forest) với độ chính xác 99.43%.",
+    description: "Khóa luận tốt nghiệp tập trung vào Data Pipeline: Thu thập log mạng SDN ➔ Tiền xử lý & làm sạch dữ liệu ➔ Trích xuất đặc trưng ➔ Suy luận mô hình Machine Learning ➔ Đưa ra quyết định phân loại tự động 7 kịch bản lỗi mạng với độ chính xác 99.43%.",
     tags: ["SDN", "Python", "Data Engineering", "Machine Learning"],
     category: "AI/ML & SYSTEM",
     gradient: "from-purple-500/20 to-pink-900/40",
     borderGlow: "hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]",
     textHover: "group-hover:text-purple-400",
     glareColor: "color-mix(in srgb, #a855f7 15%, transparent)",
+    link: "https://youtu.be/J-vdjccoH8g?si=wwlyS6QipLsHxxdy",
   },
 ];
 
