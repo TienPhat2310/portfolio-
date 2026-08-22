@@ -9,30 +9,36 @@ export default function Footer() {
   const [visitors, setVisitors] = useState<number | null>(null);
 
   useEffect(() => {
+    // Helper function to handle fetch and fallback
+    const fetchCounter = async (url: string, fallback: number, offset: number = 0) => {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("API error");
+        const data = await res.json();
+        if (typeof data.count === "number") {
+          return data.count + offset;
+        }
+        throw new Error("Invalid format");
+      } catch (err) {
+        return fallback;
+      }
+    };
+
     // Increment total views on every load
-    fetch("https://api.counterapi.dev/v1/tienphat_portfolio/views/up")
-      .then((res) => res.json())
-      .then((data) => setViews(data.count))
-      .catch(() => setViews(171)); // Fallback
+    fetchCounter("https://api.counterapi.dev/v1/tienphat_portfolio/views/up", 171).then(setViews);
 
     // Check unique visitors using localStorage
     const hasVisited = localStorage.getItem("has_visited_tienphat");
     
     if (!hasVisited) {
       // First time visitor
-      fetch("https://api.counterapi.dev/v1/tienphat_portfolio/uv/up")
-        .then((res) => res.json())
-        .then((data) => {
-          setVisitors(data.count + 95);
-          localStorage.setItem("has_visited_tienphat", "true");
-        })
-        .catch(() => setVisitors(125)); // Fallback
+      fetchCounter("https://api.counterapi.dev/v1/tienphat_portfolio/uv/up", 125, 95).then((count) => {
+        setVisitors(count);
+        localStorage.setItem("has_visited_tienphat", "true");
+      });
     } else {
-      // Returning visitor, just get the count
-      fetch("https://api.counterapi.dev/v1/tienphat_portfolio/uv")
-        .then((res) => res.json())
-        .then((data) => setVisitors(data.count + 95))
-        .catch(() => setVisitors(125)); // Fallback
+      // Returning visitor
+      fetchCounter("https://api.counterapi.dev/v1/tienphat_portfolio/uv", 125, 95).then(setVisitors);
     }
   }, []);
 
