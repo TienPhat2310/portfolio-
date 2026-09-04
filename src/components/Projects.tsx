@@ -5,7 +5,7 @@ import TiltCard from "./TiltCard";
 const projects = [
   {
     title: "Kaspersky KUMA SIEM & SOAR Integration",
-    description: "Kinh nghiệm thực tế (SOC Intern @ DTG): Cấu hình KUMA Agent thu thập log Nginx & auditd trên Linux, thực hành Wazuh FIM; biên dịch, tùy chỉnh & tinh chỉnh các quy tắc tương quan (Correlation Rules) phát hiện Web Shell/SQLi dựa trên PoC Guide của hãng; xây dựng luồng tự động cảnh báo (n8n) & kết nối DFIR-IRIS theo chuẩn NIST SP 800-61r2.",
+    description: "Practical Experience (SOC Intern @ DTG): Configured KUMA Agent to collect Nginx & auditd logs on Linux, practiced Wazuh FIM; translated, customized & fine-tuned Correlation Rules for Web Shell/SQLi detection based on vendor PoC Guides; built automated alert workflows (n8n) & integrated DFIR-IRIS following NIST SP 800-61r2 standards.",
     tags: ["Kaspersky KUMA", "Wazuh FIM", "n8n SOAR", "DFIR-IRIS", "NIST"],
     category: "CYBERSECURITY / SOC INTERN",
     gradient: "from-blue-500/20 to-indigo-900/40",
